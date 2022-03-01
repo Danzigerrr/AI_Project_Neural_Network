@@ -267,5 +267,35 @@
 	"isAntiVaccine":false,
 	"source": "https://www.feam.eu/to-vaccinate-or-not-what-science-says-knaw/",
 	"text": "If we take one of these licensed vaccines, we not only protect ourselves. We also protect each other, because we cannot infect our family, friends and colleagues anymore. This is not just an opinion in the discussion on vaccination. It is the conclusion of the best experts in Europe and elsewhere."
+},
+{
+    	"title": "Vaccine safety claims do not stand up to scrutiny",
+    	"isAntiVaccine": true,
+    	"source": "https://www.bmj.com/content/360/bmj.k1378/rr-0",
+    	"text": "So vaccines are NOT safe by design. Safety by testing ALONE, is an unacceptable strategy for such a safety critical product. And it is too late when the safety problems are detected in the general public, as is the case now and as clearly demonstrated by the Pandemrix induced narcolepsy disaster. The Institute of Medicine (IOM) lamented in 2012 that \"for the majority of cases (135 vaccine-adverse event pairs), the evidence was inadequate to accept or reject a causal relationship.\" The evidence for vaccine safety claims simply does NOT exist. Many epidemiological vaccine safety studies make the basic mistake of declaring \"lack of association\" because the confidence interval of the odds ratio does not span the null value. These conclusions are simply wrong. Mechanistic evidence clearly demonstrates vaccines cause food allergies, asthma⁠, autism and many autoimmune diseases including type 1 diabetes."
+},
+{
+    	"title": "OPINION: COVID VACCINE NOT SAFE",
+	"isAntiVaccine": true,
+    	"source": "https://www.northsidesun.com/columns-local-news-opinion/opinion-covid-vaccine-not-safe#sthash.qKGliu8P.dpbs",
+    	"text": "Since the Covid-19 vaccines have been released under the emergency use authorization act (EUA) as an experimental, and mostly untested, set of vaccines, we have seen a dramatic rise in reported deaths and serious injuries caused by these “vaccines”. In fact, since VAERS data was first released, deaths caused by the vaccines have increased by almost 1,000 deaths per month. The last figures, as of June 25th, 2021 recorded 9,049 Covid vaccine-related deaths, which is an increase of 2,000 deaths in just one week. This indicates that there has been a dramatic acceleration in vaccine-related deaths. Prior to these vaccines, deaths from all vaccines combined, per year were around 350 people. Despite the mass, unprecedented number of vaccine-related deaths, the program continued unabated. During this same period, 34,065 serious complications have also been reported secondary to these vaccines, up 2,825 cases within the previous week. VAERS reports that 5,852 of these people are permanently damaged. Over 54,551 people suffered such a significant reaction to the vaccines that they ended up in the emergency room. Of the injuries 6,898 were considered life threatening. If we even use a very low figure of underreporting of 10% (rather than the 99% true figure) that would mean we actually have 90,000 deaths and 340,000 serious injuries, 58,852 of whom are permanently injured. Steve Kirsch, a researcher, stated in a position paper that his examination, confirmed by three studies, concluded that possibly 25,800 Americans have died as a result of the vaccines. Because of poor record keeping, we just don’t have an accurate number yet."
+},
+{
+    	"title": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1114674/",
+    	"isAntiVaccine": true,
+    	"source": "Public should be told that vaccines may have long term adverse effects",
+    	"text": "Research into immunisation has been based on the theory that the benefits of immunisation far outweigh the risks from delayed adverse events and so long term safety studies do not need to be performed. When looking at diabetes—only one potential chronic adverse event—we found that the rise in the prevalence of diabetes may more than offset the expected decline in long term complications of H influenzae meningitis. Thus diabetes induced by vaccine should not be considered a rare potential adverse event. The incidence of many other chronic immunological diseases, including asthma, allergies, and immune mediated cancers, has risen rapidly and may also be linked to immunisation."
+},
+{
+    	"title": "Childhood vaccines: Tough questions, straight answers",
+    	"isAntiVaccine": false,
+    	"source": "https://www.mayoclinic.org/healthy-lifestyle/infant-and-toddler-health/in-depth/vaccines/art-20048334",
+    	"text": "In general, skipping vaccines isn't a good idea. This can leave your child vulnerable to potentially serious diseases that could otherwise be avoided. And consider this: For some children — including those who can't receive certain vaccines for medical reasons (such as cancer therapy) — the only protection from vaccine-preventable diseases is the immunity of the people around them. If immunization rates drop, vaccine-preventable diseases might once again become common threats."
+},
+{
+    	"title": "Childhood vaccines: Tough questions, straight answers",
+    	"isAntiVaccine": false,
+    	"source": "https://www.mayoclinic.org/healthy-lifestyle/infant-and-toddler-health/in-depth/vaccines/art-20048334",
+    	"text": "Any vaccine can cause side effects. Usually, these side effects are minor — a low-grade fever, fussiness and soreness at the injection site. Some vaccines cause a temporary headache, fatigue or loss of appetite. Rarely, a child might experience a severe allergic reaction or a neurological side effect, such as a seizure. Although these rare side effects are a concern, the risk of a vaccine causing serious harm or death is extremely small. The benefits of getting a vaccine are much greater than the possible side effects for almost all children."
 }
 ]
