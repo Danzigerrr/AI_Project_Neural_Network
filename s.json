@@ -29,4 +29,144 @@
 	"isAntiVaccine": false,
 	"source":"https://www.ucsf.edu/news/2021/01/419691/covid-19-vaccine-fact-vs-fiction-expert-weighs-common-fears",
 	"text": "Some vaccines, such as the measles or oral polio vaccines, contain a weakened form of the live virus, and in very rare cases these can cause disease. “But this isn’t one of those,” said Boslett. “The mRNA vaccines just contain a message that encodes the spike protein. It is not a live virus, so there’s no chance that the vaccine can give you COVID.” Some people may feel symptoms such as fever or muscle aches after the vaccines, but those are due to your body’s immune response, not an infection. “That is actually not a bad thing because that means that your body is producing an inflammatory response to the vaccine, which is what we want.” "
-}]
+},
+{
+		"title": "Vaccine efficacy, effectiveness and protection",
+		"isAntiVaccine": false,
+		"source": "https://www.who.int/news-room/feature-stories/detail/vaccine-efficacy-effectiveness-and-protection",
+		"text": "A vaccine’s efficacy is measured in a controlled clinical trial and is based on how many people who got vaccinated developed the ‘outcome of interest’ (usually disease) compared with how many people who got the placebo (dummy vaccine) developed the same outcome. Once the study is complete, the numbers of sick people in each group are compared, in order to calculate the relative risk of getting sick depending on whether or not the subjects received the vaccine. From this we get the efficacy – a measure of how much the vaccine lowered the risk of getting sick. If a vaccine has high efficacy, a lot fewer people in the group who received the vaccine got sick than the people in the group who received the placebo. So, for example, let’s imagine a vaccine with a proven efficacy of 80%. This means that – out of the people in the clinical trial – those who received the vaccine were at a 80% lower risk of developing disease  than the group who received the placebo. This is calculated by comparing the number of cases of disease in the vaccinated group versus the placebo group. An efficacy of 80% does not mean that 20% of the vaccinated group will become ill."
+},
+{
+		"title": "Autism and Vaccines",
+		"isAntiVaccine": false,
+		"source": "https://www.cdc.gov/vaccinesafety/concerns/autism.html",
+		"text": "One vaccine ingredient that has been studied specifically is thimerosal. Thimerosal is a mercury-based preservative used to prevent germs (like bacteria and fungi) from contaminating multidose vials of vaccines. Research shows that thimerosal does not cause ASD. In fact, a 2004 scientific review by the IOM concluded that \"the evidence favors rejection of a causal relationship between thimerosal–containing vaccines and autism.\""
+},
+{
+		"title": "MMR vaccination and autism",
+		"isAntiVaccine": true,
+		"source": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(05)75696-8/fulltext",
+		"text": "Can the dramatic increase in autism be ascribed to change in diagnostic practice? Data from the recent California report from the Office of Developmental Services belie this contention. The Figure 1 juxtaposes the data from California with those from north-west London. Identical temporal trends are shown, with the rise in autism from a steady baseline value, coinciding with the introduction of MMR vaccine as the single strategy in both countries that use the same diagnostic criteria for autism."
+},
+ 
+{
+	"title": "Should I get a COVID-19 vaccine? How to weigh up your risks and benefits",
+	"isAntiVaccine": false,
+	"source": "https://www.science.org.au/curious/people-medicine/should-i-get-covid-19-vaccine-how-weigh-your-risks-and-benefits",
+	"text": "When there is very little or no COVID-19 disease in the community, people aren’t so concerned about getting sick. But outbreaks of COVID-19 can arise quickly. In a matter of days, COVID-19 can be in a place that has previously had low or no community transmission of the virus. Vaccination rollouts are hard to stop and start: they take time, planning and resources—and no one can predict when, or where, another outbreak might occur. That's why timely vaccination prior to outbreaks is so important. When restrictions start to lift and our borders open up, the risk of getting COVID-19 is likely to increase again. We all need to be prepared and make sure we have the best possible protection against future infection. Vaccines can help us return to a more normal way of life and provide protection for everyone in our communities, especially the most vulnerable."
+},
+{
+	"title": "Should I get a COVID-19 vaccine? How to weigh up your risks and benefits",
+	"isAntiVaccine": true,
+	"source": "https://www.science.org.au/curious/people-medicine/should-i-get-covid-19-vaccine-how-weigh-your-risks-and-benefits",
+	"text": "Common side effects from COVID-19 vaccines include pain at the injection site, headaches, fatigue, or feeling flu-like symptoms. This is normal and indicates the vaccine is working. In a group of 100,000 people, we would expect just under 50,000 people to experience side effects because they are so common."
+},
+{
+	"title": "Should I get a COVID-19 vaccine? How to weigh up your risks and benefits",
+	"isAntiVaccine": true,
+	"source": "https://www.science.org.au/curious/people-medicine/should-i-get-covid-19-vaccine-how-weigh-your-risks-and-benefits",
+	"text": "Severe side effects: we would also expect to see 1 to 2 people experience a severe complication like TTS. The risks of TTS are higher for younger people, especially those under 60 years. Anyone who develops severe headaches and tiredness up to 30 days after the first dose should seek medical help immediately. It’s important to know that even if someone becomes ill with TTS, doctors now have a better understanding of the condition. It’s much easier to diagnose and get the right treatment, so the chances of recovery are higher than they were before."
+},
+{
+	"title": "Should I get a COVID-19 vaccine? How to weigh up your risks and benefits",
+	"isAntiVaccine": false,
+	"source": "https://www.science.org.au/curious/people-medicine/should-i-get-covid-19-vaccine-how-weigh-your-risks-and-benefits",
+	"text": "When you are vaccinated against COVID-19, you not only protect yourself, but also those around you. Even if you are fit and healthy and have a lower risk of becoming severely ill from COVID-19, you might pass the virus on to a more vulnerable person if you become infected. You may not know which people in your life are more vulnerable to disease and death from COVID-19: an elderly parent or a friend undergoing chemotherapy are obviously at higher risk, but we don’t always know what risk factors affect others. Getting vaccinated helps keep your friends and family safe. As more people get vaccinated, everyone is better protected against future outbreaks. Everyone can help reduce the impact and spread of COVID-19. Your decision to get vaccinated matters."
+},
+{
+	"title": "Are Vaccinations Worth It?",
+	"isAntiVaccine": false ,
+	"source": "https://www.immunize.org/reports/report042.asp",
+	"text": "Accordingly, in addition to its role in protecting them from serious diseases that are still lurking about, I consider vaccinating our children as part of a  social contract we have with the communities we live in. When we vaccinate the majority of children, we create what is known as \"herd immunity\" that limits the spread of a disease through a population. Parents who do not vaccinate their children would seem to be apart from this social contract; in reality, though, they can safely refuse vaccination for their children only because  most parents have accepted the risk of vaccination for their own children and thereby have raised the overall level of protective immunity. If we all spurned this contract, a new generation of children--our children--would be devastated by diseases that could be avoided. That would violate what I consider to be one of the most fundamental tenets of public health: children should not be harmed by things that can be prevented."
+},
+{
+	"title": "Benefits of Getting a COVID-19 Vaccine",
+	"isAntiVaccine": false,
+	"source": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html",
+	"text": "Recent data suggest COVID-19 vaccines become less effective at preventing infection or severe illness over time, especially for people ages 65 years and older. This is why booster shots are recommended for people ages 12 years and older who have completed their primary vaccination series. However, even as the vaccine’s ability to prevent infection decreases with time, COVID-19 vaccination continues to reduce the risk of hospitalization and death when people become infected with COVID-19."
+},
+{
+	"title": "Benefits of Getting a COVID-19 Vaccine",
+	"isAntiVaccine": false,
+	"source": "https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-benefits.html",
+	"text": "Viruses are constantly changing, including the virus that causes COVID-19. These changes occur over time and can lead to the emergence of variants that may have new characteristics. Vaccines continue to reduce a person's risk of contracting the virus that cause COVID-19. Vaccines are highly effective against severe illness."
+},
+{
+	"title": "10 Myths About Coronavirus Vaccines",
+	"isAntiVaccine": false,
+	"source": "https://www.aarp.org/health/drugs-supplements/info-2020/covid-vaccine-myths.html",
+	"text": "Even if you’ve had COVID-19, experts recommend getting vaccinated — and boosted, if you’re eligible. One reason: It’s unclear how long you are protected from the disease after a previous infection. Another reason: New research suggests that the COVID-19 vaccines offer better protection than natural immunity and can help prevent reinfections."
+},
+{
+	"title": "How do we know Covid vaccines are safe?",
+	"isAntiVaccine": false,
+	"source": "https://www.bbc.com/news/health-55056016",
+	"text": "Vaccines do not give you a disease. Instead, they teach your body's immune system to recognise and fight the infection they have been designed to protect against. Some people do experience mild to moderate symptoms after being vaccinated. This is not the disease itself, but the body's response to the vaccine. Common reactions that may affect more than one in 10 people and typically get better within days include chills, tiredness and aching muscles."
+},
+{
+	"title": "Receiving a COVID-19 vaccine is not worth the risk",
+	"isAntiVaccine": true,
+	"source": "https://hillsdalecollegian.com/2021/04/receiving-a-covid-19-vaccine-is-not-worth-the-risk/",
+	"text": "Additionally, there are serious health risks associated with the vaccine that the general public has not discussed, according to Yeadon and Bhakdi. For example, Bhakdi asserted that the vaccine increases the risk of blood clotting in those who take it. After the vaccine enters the bloodstream, it binds to cells that line blood vessels and induces them to produce the virus protein. Then, Bhakdi said, “many copies of the virus spike will appear on the cell surface. These may directly bind and activate blood platelets, which will trigger blood clotting.”"
+},
+{
+	"title": "Receiving a COVID-19 vaccine is not worth the risk",
+	"isAntiVaccine": true,
+	"source": "https://hillsdalecollegian.com/2021/04/receiving-a-covid-19-vaccine-is-not-worth-the-risk/",
+	"text": "Another concern stems from the fact that the COVID-19 vaccine causes our cells to produce the virus protein themselves, which is a feature of mRNA vaccines, rather than directly introducing the virus protein into the body like a traditional vaccine would."
+},
+{
+	"title": "Why Parents Still Hesitate to Vaccinate Their Children Against COVID-19",
+	"isAntiVaccine":false,
+	"source": "https://jamanetwork.com/journals/jama/fullarticle/2787289",
+	"text": "But clinical trial results demonstrate the vaccine’s safety in young children. Research published in the New England Journal of Medicine (NEJM) and funded by BNT162b2 makers Pfizer and BioNTech found no serious vaccine-related adverse effects among the 1517 fully vaccinated 5- to 11-year-old participants. After a median 2.3-month follow-up, the researchers concluded that BNT162b2 is safe, immunogenic, and effective for the young age group they studied."
+},
+{
+	"title": "The 6 reasons Americans aren’t getting vaccinated",
+	"isAntiVaccine":true,
+	"source": "https://www.vox.com/2021/6/2/22463223/covid-19-vaccine-hesitancy-reasons-why",
+	"text": "According to experts, there are a variety of reasons: lack of access to vaccines, a refusal to see Covid-19 as a threat, concern about the vaccines’ side effects, little trust in the vaccines or the institutions behind them, and belief in at least one of several different conspiracy theories. Some of these reasons overlap and compound; for example, if someone doesn’t see Covid-19 as a big threat, they might decide the vaccine isn’t worth the side effects."
+},
+{
+	"title": "The 6 reasons Americans aren’t getting vaccinated",
+	"isAntiVaccine":true,
+	"source": "https://www.vox.com/2021/6/2/22463223/covid-19-vaccine-hesitancy-reasons-why",
+	"text": "Even after the past year, some Americans still don’t see the coronavirus as a serious threat. Maybe they’re young, seeing that the virus isn’t as deadly for them as it is for older groups. They could be Republicans, who bought into former President Donald Trump’s claims that the coronavirus wasn’t a big deal and that Democrats, experts, and journalists have exaggerated its risk. Polls show both groups tend to be less likely to want to get vaccinated."
+},
+{
+	"title": "The 6 reasons Americans aren’t getting vaccinated",
+	"isAntiVaccine":true,
+	"source": "https://www.vox.com/2021/6/2/22463223/covid-19-vaccine-hesitancy-reasons-why",
+	"text": "Beyond concerns about side effects, many of the hesitant just don’t have much trust in the vaccines. They may believe that the process for the vaccines was too fast — it was, after all, a record time from conception to mass production. They may note the vaccines aren’t even technically approved by the Food and Drug Administration since the agency has only authorized them for emergency use."
+},
+{
+	"title": "The 6 reasons Americans aren’t getting vaccinated",
+	"isAntiVaccine":true,
+	"source": "https://www.vox.com/2021/6/2/22463223/covid-19-vaccine-hesitancy-reasons-why",
+	"text": "For some, the concern is the vaccine itself — and particularly the side effects that can come with it. These concerns can be about something the vaccine really causes, like a day or two of aches, fever, and fatigue or, in extremely rare cases, potentially blood clots. But they can also be about things that aren’t real or proven, like other long-term health risks or unproven claims about, for example, infertility."
+},
+{
+	"title": "Unpacking parents’ reasons for not vaccinating their children: why it matters",
+	"isAntiVaccine":true,
+	"source": "https://theconversation.com/unpacking-parents-reasons-for-not-vaccinating-their-children-why-it-matters-171527",
+	"text": "The first reason relates to the view that healthcare is a matter of personal risk, choice, and responsibility. Many parents, across the spectrum of vaccination attitudes, hold this worldview. Yet some parents see this worldview as being in conflict with vaccination promotion messages. These messages emphasise population-level risk and community health. This perceived tension may lead some parents to be hesitant about vaccination for their children."
+},
+{
+	"title": "Unpacking parents’ reasons for not vaccinating their children: why it matters",
+	"isAntiVaccine":true,
+	"source": "https://theconversation.com/unpacking-parents-reasons-for-not-vaccinating-their-children-why-it-matters-171527",
+	"text": "The second reason relates to the impact of social exclusion. Exclusion can take many different forms: economic, political, and cultural. All these forms can lay the foundation for distrust, alienation, resentment, and demotivation. Parents who are socially excluded may be hesitant about vaccination because they distrust vaccines and those delivering them. Or it may be a form of resistance or a mechanism to bring about change. It may be that vaccination takes time and comes with opportunity costs for these parents."
+},
+{
+	"title": "Autism and Vaccines",
+	"isAntiVaccine":false,
+	"source": "https://www.cdc.gov/vaccinesafety/concerns/autism.html",
+	"text": "Some people have had concerns that ASD might be linked to the vaccines children receive, but studies have shown that there is no link between receiving vaccines and developing ASD. The National Academy of Medicine, formerly known as Institute of Medicine, reviewed the safety of 8 vaccines to children and adults. The review found that with rare exceptions, these vaccines are very safe."
+},
+{
+	"title": "MMR and autism",
+	"isAntiVaccine":false,
+	"source": "https://www.who.int/groups/global-advisory-committee-on-vaccine-safety/topics/mmr-vaccines-and-autism",
+	"text": "Based on the extensive review presented, GACVS concluded that no evidence exists of a causal association between MMR vaccine and autism or autistic disorders. The Committee believes the matter is likely to be clarified by a better understanding of the causes of autism. GACVS also concluded that there is no evidence to support the routine use of monovalent measles, mumps and rubella vaccines over the combined vaccine, a strategy which would put children at increased risk of incomplete immunization. Thus, GACVS recommends that there should be no change in current vaccination practices with MMR."
+}
+]
