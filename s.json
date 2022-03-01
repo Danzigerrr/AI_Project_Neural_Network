@@ -52,7 +52,6 @@
 	"source": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(05)75696-8/fulltext",
 	"text": "Can the dramatic increase in autism be ascribed to change in diagnostic practice? Data from the recent California report from the Office of Developmental Services belie this contention. The Figure 1 juxtaposes the data from California with those from north-west London. Identical temporal trends are shown, with the rise in autism from a steady baseline value, coinciding with the introduction of MMR vaccine as the single strategy in both countries that use the same diagnostic criteria for autism."
 },
- 
 {
 	"title": "Should I get a COVID-19 vaccine? How to weigh up your risks and benefits",
 	"isAntiVaccine": false,
@@ -174,15 +173,99 @@
 	"text": "Based on the extensive review presented, GACVS concluded that no evidence exists of a causal association between MMR vaccine and autism or autistic disorders. The Committee believes the matter is likely to be clarified by a better understanding of the causes of autism. GACVS also concluded that there is no evidence to support the routine use of monovalent measles, mumps and rubella vaccines over the combined vaccine, a strategy which would put children at increased risk of incomplete immunization. Thus, GACVS recommends that there should be no change in current vaccination practices with MMR."
 },
 {
-	"title": "Vaccines and side effects – no long-term harm to health",
-	"isAntiVaccine":false,
-	"source": "https://www.unicef.org/montenegro/en/stories/vaccines-and-side-effects-no-long-term-harm-health",
-	"text": "For now, there is no study or research that has confirmed that the vaccines can have long-term negative effects on our health, Dr. Krnjevic told us. The WHO, a reliable and expert source of information on the subject, claims that the vaccines are safe – which also means they do not cause any long-term, negative health effects."
+	"title": "Should Vaccines Be Required for Children?",
+	"isAntiVaccine":true,
+	"source": "https://vaccines.procon.org/",
+	"text": "Opponents say that children’s immune systems can deal with most infections naturally, and that injecting questionable vaccine ingredients into a child may cause side effects, including seizures, paralysis, and death. They contend that numerous studies prove that vaccines may trigger problems like ADHD and diabetes."
 },
 {
-	"title": "The Safety of COVID-19 Vaccinations—We Should Rethink the Policy",
-	"isAntiVaccine": true,
-	"source": "https://www.mdpi.com/2076-393X/9/7/693",
-	"text": "Background: COVID-19 vaccines have had expedited reviews without sufficient safety data. We wanted to compare risks and benefits. Method: We calculated the number needed to vaccinate (NNTV) from a large Israeli field study to prevent one death. We accessed the Adverse Drug Reactions (ADR) database of the European Medicines Agency and of the Dutch National Register (lareb.nl) to extract the number of cases reporting severe side effects and the number of cases with fatal side effects. Result: The NNTV is between 200-700 to prevent one case of COVID-19 for the mRNA vaccine marketed by Pfizer, while the NNTV to prevent one death is between 9000 and 50,000 (95% confidence interval), with 16,000 as a point estimate. The number of cases experiencing adverse reactions has been reported to be 700 per 100,000 vaccinations. Currently, we see 16 serious side effects per 100,000 vaccinations, and the number of fatal side effects is at 4.11/100,000 vaccinations. For three deaths prevented by vaccination we have to accept two inflicted by vaccination. Conclusions: This lack of clear benefit should cause governments to rethink their vaccination policy."
+	"title": "Should Vaccines Be Required for Children?",
+	"isAntiVaccine":false,
+	"source": "https://vaccines.procon.org/",
+	"text": "Vaccines can save children’s lives. The American Academy of Pediatrics states that “most childhood vaccines are 90%-99% effective in preventing disease.” According to Shot@Life, a United Nations Foundation partner organization, vaccines save 2.5 million children from preventable diseases every year, which equates to roughly 285 children saved every hour. The Centers for Disease Control (CDC) estimated that childhood immunization prevented about 419 million illnesses, 26.8 million hospitalizations, and 936,000 early deaths of children born between 1994 and 2018. The measles vaccine has decreased childhood deaths from measles by 74%."
+},
+{
+	"title": "Should Vaccines Be Required for Children?",
+	"isAntiVaccine":false,
+	"source": "https://vaccines.procon.org/",
+	"text": "The ingredients in vaccines are safe in the amounts used. Ingredients, such as thimerosal, formaldehyde, and aluminum, can be harmful in large doses but they are not used in harmful quantities in vaccines. Children are exposed to more aluminum in breast milk and infant formula than they are exposed to in vaccines. Paul Offit, MD, notes that children are exposed to more bacteria, viruses, toxins, and other harmful substances in one day of normal activity than are in vaccines.  With the exception of inactivated flu vaccines, thimerosal (a mercury compound) has been removed or reduced to trace amounts in vaccines for children under 6 years old. The FDA requires up to 10 or more years of testing for all vaccines before they are licensed, and then they are monitored by the CDC and the FDA to make sure the vaccines and the ingredients used in the vaccines are safe."
+},
+{
+	"title": "Should Vaccines Be Required for Children?",
+	"isAntiVaccine":false,
+	"source": "https://vaccines.procon.org/",
+	"text": "Major medical organizations state that vaccines are safe. These organizations include: CDC, Food and Drug Administration (FDA), Institute of Medicine (IOM), American Medical Association (AMA), American Academy of Pediatrics (AAP), UNICEF, US Department of Health and Human Services (HHS), World Health Organization (WHO), Public Health Agency of Canada, Canadian Paediatric Society, National Foundation for Infectious Diseases (NFID), and American Academy of Family Physicians (AAFP)"
+},
+{
+	"title": "Should Vaccines Be Required for Children?",
+	"isAntiVaccine":false,
+	"source": "https://vaccines.procon.org/",
+	"text": "Vaccines protect future generations. Vaccinated mothers protect their unborn children from viruses that could potentially cause birth defects, and vaccinated communities can help eradicate diseases for future generations. Before the rubella vaccine was licensed in 1969, a global rubella (German measles) outbreak caused the deaths of 11,000 babies, and birth defects in 20,000 babies between 1963 and 1965 in the United States."
+},
+{
+	"title": "Should Vaccines Be Required for Children?",
+	"isAntiVaccine":true,
+	"source": "https://vaccines.procon.org/",
+	"text": "Vaccines can cause serious and sometimes fatal side effects. According to the CDC, all vaccines carry a risk of a life-threatening allergic reaction (anaphylaxis) in about one per million children. The rotavirus vaccination can cause intussusception, a type of bowel blockage that may require hospitalization, in about one per 20,000 babies in the United States. Long-term seizures, coma, lowered consciousness, and permanent brain damage may be associated with the DTaP (diphtheria, tetanus, and pertussis) and MMR vaccines, though the CDC notes the rarity of the reaction makes it difficult to determine causation."
+},
+{
+	"title": "Should Vaccines Be Required for Children?",
+	"isAntiVaccine":true,
+	"source": "https://vaccines.procon.org/",
+	"text": "Vaccines contain harmful ingredients. Aluminum is used in some vaccines and excess aluminum in human bodies can cause neurological harm. Formaldehyde, also found in some vaccines, is a carcinogen, and, according to VaxTruth.org, exposure can cause side effects such as cardiac impairment, central nervous system depression, “changes in higher cognitive functions,” coma, convulsions, and death. Glutaraldehyde, a compound used to disinfect medical and dental equipment, is used in some DTaP vaccinations and exposure can cause asthma and other respiratory issues. Some flu vaccines contain cetyltrimethylammonium bromide (CTMB), a compound used as an antiseptic, which can be a skin, eye, and respiratory irritant. "
+},
+{
+	"title": "Should Vaccines Be Required for Children?",
+	"isAntiVaccine":true,
+	"source": "https://vaccines.procon.org/",
+	"text": "Most diseases that vaccines target are relatively harmless in many cases, thus making vaccines unnecessary. The chickenpox is often just a rash with blisters and can be treated with acetaminophen, cool compresses, and calamine lotion. The measles is normally a rash accompanied by a fever and runny nose and can be treated with rest and fluids. Rubella is often just a virus with a rash and low fever and can be treated with acetaminophen. Rotavirus can normally be treated with hydration and probiotics."
+},
+{
+	"title": "Everything You Need to Know About Vaccinations",
+	"isAntiVaccine":false,
+	"source": "https://www.healthline.com/health/vaccinations",
+	"text": "Vaccines are considered to be safe. They’re rigorously tested and go through many rounds of study, examination, and research before they’re used with the general public. The overwhelming bulk of research and evidence shows that vaccines are safe and that side effects are rare. Side effects that do occur are typically mild."
+},
+{
+	"title": "Everything You Need to Know About Vaccinations",
+	"isAntiVaccine":true,
+	"source": "https://www.healthline.com/health/vaccinations",
+	"text": "Each vaccine is made with different components, and each can affect you differently. People who have experienced allergic reactions to certain vaccines in the past may experience an allergic reaction again."
+},
+{
+	"title": "Benefits and Risks of Vaccines",
+	"isAntiVaccine":true,
+	"source": "https://scdhec.gov/benefits-risks-vaccines",
+	"text": "No vaccine offers 100% protection and vaccine efficacy meaning how well a vaccine prevents illness among those vaccinated varies from one type of vaccine to the next and how well a vaccine works also depends on the health status of the person vaccinated. "
+},
+{
+	"title": "Benefits and Risks of Vaccines",
+	"isAntiVaccine":true,
+	"source": "https://scdhec.gov/benefits-risks-vaccines",
+	"text": "Vaccination is one of the most successful public health interventions in reducing disease spread, preventing complications and even deaths from vaccine preventable diseases. The success of vaccines in reducing disease should not suggest that vaccine preventable diseases are no longer a threat. Even though immunizations have significantly reduced vaccine preventable diseases, there were nearly 7,800 reports of vaccine preventable diseases in South Carolina in 2016."
+},
+{
+	"title": "The Pros and Cons of a Vaccine Mandate at Work",
+	"isAntiVaccine":false,
+	"source": "https://www.paycor.com/resource-center/articles/pros-and-cons-of-mandatory-vaccines/",
+	"text": "Some of the pros of mandatory vaccinations at work include:COVID-19 vaccines are effective at helping protect against severe disease and death from variants of the virus currently circulating, including the Delta variant. Studies show that the vaccine is effective at keeping you from getting COVID-19. Getting the vaccine will also help keep you from getting seriously ill even if you do get the virus. A vaccinated workforce should help you avoid contact tracing and long quarantine periods."
+},
+{
+	"title": "CONVERSATIONS ABOUT COVID-19 VACCINES",
+	"isAntiVaccine":false,
+	"source": "https://covid.srhd.org/topics/not-ready-to-vax",
+	"text": "COVID-19 vaccines have been shown to be safe and effective. Rigorous testing has demonstrated the safety of the COVID-19 vaccines and the Centers for Disease Control and Prevention (CDC) continue to monitor for safety concerns. All available vaccines are effective at preventing severe disease, hospitalization and death caused by COVID-19."
+},
+{
+	"title": "To Vaccinate or not: What Science says — Royal Netherlands Academy of Arts and Sciences",
+	"isAntiVaccine":false,
+	"source": "https://www.feam.eu/to-vaccinate-or-not-what-science-says-knaw/",
+	"text": "Vaccines can have side effects, that is a fact. But they may only be used if they have been extensively tested for safety by independent organisations. In the past there have been harmful side effects, but these were rare and did not outweigh the protection provided by the vaccines. Nowadays, researchers understand much better how vaccines exactly work. Therefore, modern vaccines are much safer than those in the past."
+},
+{
+	"title": "To Vaccinate or not: What Science says — Royal Netherlands Academy of Arts and Sciences",
+	"isAntiVaccine":false,
+	"source": "https://www.feam.eu/to-vaccinate-or-not-what-science-says-knaw/",
+	"text": "If we take one of these licensed vaccines, we not only protect ourselves. We also protect each other, because we cannot infect our family, friends and colleagues anymore. This is not just an opinion in the discussion on vaccination. It is the conclusion of the best experts in Europe and elsewhere."
 }
 ]
