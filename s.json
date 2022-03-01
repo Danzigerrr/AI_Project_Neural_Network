@@ -7,7 +7,7 @@
 {
 	"title": "The rise of Robert Malone, the mRNA scientist turned vaccine skeptic who shot to fame on Joe Rogan's podcast",
 	"isAntiVaccine": true,
-	"source": "https://www.msn.com/en-us/health/medical/the-rise-of-robert-malone-the-mrna-scientist-turned-vaccine-skeptic-who-shot-to-fame-on-joe-rogans-podcast/ar-AAUnc6ehttps://www.msn.com/en-us/health/medical/the-rise-of-robert-malone-the-mrna-scientist-turned-vaccine-skeptic-who-shot-to-fame-on-joe-rogans-podcast/ar-AAUnc6e",
+	"source": "https://www.msn.com/en-us/health/medical/the-rise-of-robert-malone-the-mrna-scientist-turned-vaccine-skeptic-who-shot-to-fame-on-joe-rogans-podcast/ar-AAUnc6e",
 	"text": "But once the novel coronavirus was discovered and sequenced in Wuhan, China, everything changed, nearly overnight. Within days, mRNA coronavirus vaccines were being widely acknowledged as one of our best bets against the virus. Scientists started using the technology to develop shots — on a breathtakingly rapid timeline. Suddenly, it seemed, everyone wanted to know who was responsible for this promising technique. If Malone is right about one thing pertaining to the mRNA vaccines, Geall said, it's that it is still important to keep researching these products and answering any yet unanswered questions about them, in addition to improving how and when they're used. \"Would I have preferred that there had been 15 years of research and safety generation through clinical trials? Absolutely,\" Geall said. \"But that wasn't an option during the pandemic.\" So he, and all the other scientists interviewed for this article, got vaccinated with the mRNA vaccines that they, Malone, and many others helped create over a 30-year period."
 },
 {
@@ -172,5 +172,17 @@
 	"isAntiVaccine":false,
 	"source": "https://www.who.int/groups/global-advisory-committee-on-vaccine-safety/topics/mmr-vaccines-and-autism",
 	"text": "Based on the extensive review presented, GACVS concluded that no evidence exists of a causal association between MMR vaccine and autism or autistic disorders. The Committee believes the matter is likely to be clarified by a better understanding of the causes of autism. GACVS also concluded that there is no evidence to support the routine use of monovalent measles, mumps and rubella vaccines over the combined vaccine, a strategy which would put children at increased risk of incomplete immunization. Thus, GACVS recommends that there should be no change in current vaccination practices with MMR."
+},
+{
+	"title": "Vaccines and side effects – no long-term harm to health",
+	"isAntiVaccine":false,
+	"source": "https://www.unicef.org/montenegro/en/stories/vaccines-and-side-effects-no-long-term-harm-health",
+	"text": "For now, there is no study or research that has confirmed that the vaccines can have long-term negative effects on our health, Dr. Krnjevic told us. The WHO, a reliable and expert source of information on the subject, claims that the vaccines are safe – which also means they do not cause any long-term, negative health effects."
+},
+{
+	"title": "The Safety of COVID-19 Vaccinations—We Should Rethink the Policy",
+	"isAntiVaccine": true,
+	"source": "https://www.mdpi.com/2076-393X/9/7/693",
+	"text": "Background: COVID-19 vaccines have had expedited reviews without sufficient safety data. We wanted to compare risks and benefits. Method: We calculated the number needed to vaccinate (NNTV) from a large Israeli field study to prevent one death. We accessed the Adverse Drug Reactions (ADR) database of the European Medicines Agency and of the Dutch National Register (lareb.nl) to extract the number of cases reporting severe side effects and the number of cases with fatal side effects. Result: The NNTV is between 200-700 to prevent one case of COVID-19 for the mRNA vaccine marketed by Pfizer, while the NNTV to prevent one death is between 9000 and 50,000 (95% confidence interval), with 16,000 as a point estimate. The number of cases experiencing adverse reactions has been reported to be 700 per 100,000 vaccinations. Currently, we see 16 serious side effects per 100,000 vaccinations, and the number of fatal side effects is at 4.11/100,000 vaccinations. For three deaths prevented by vaccination we have to accept two inflicted by vaccination. Conclusions: This lack of clear benefit should cause governments to rethink their vaccination policy."
 }
 ]
