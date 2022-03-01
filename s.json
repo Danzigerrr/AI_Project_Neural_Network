@@ -9,4 +9,23 @@
 		"isAntiVaccine": true,
 		"source": "https://www.msn.com/en-us/health/medical/the-rise-of-robert-malone-the-mrna-scientist-turned-vaccine-skeptic-who-shot-to-fame-on-joe-rogans-podcast/ar-AAUnc6ehttps://www.msn.com/en-us/health/medical/the-rise-of-robert-malone-the-mrna-scientist-turned-vaccine-skeptic-who-shot-to-fame-on-joe-rogans-podcast/ar-AAUnc6e",
 		"text": "But once the novel coronavirus was discovered and sequenced in Wuhan, China, everything changed, nearly overnight. Within days, mRNA coronavirus vaccines were being widely acknowledged as one of our best bets against the virus. Scientists started using the technology to develop shots — on a breathtakingly rapid timeline. Suddenly, it seemed, everyone wanted to know who was responsible for this promising technique. If Malone is right about one thing pertaining to the mRNA vaccines, Geall said, it's that it is still important to keep researching these products and answering any yet unanswered questions about them, in addition to improving how and when they're used. \"Would I have preferred that there had been 15 years of research and safety generation through clinical trials? Absolutely,\" Geall said. \"But that wasn't an option during the pandemic.\" So he, and all the other scientists interviewed for this article, got vaccinated with the mRNA vaccines that they, Malone, and many others helped create over a 30-year period."
-}]
+},
+{
+		"title": "Vaccine efficacy, effectiveness and protection",
+		"isAntiVaccine": false,
+		"source": "https://www.who.int/news-room/feature-stories/detail/vaccine-efficacy-effectiveness-and-protection",
+		"text": "A vaccine’s efficacy is measured in a controlled clinical trial and is based on how many people who got vaccinated developed the ‘outcome of interest’ (usually disease) compared with how many people who got the placebo (dummy vaccine) developed the same outcome. Once the study is complete, the numbers of sick people in each group are compared, in order to calculate the relative risk of getting sick depending on whether or not the subjects received the vaccine. From this we get the efficacy – a measure of how much the vaccine lowered the risk of getting sick. If a vaccine has high efficacy, a lot fewer people in the group who received the vaccine got sick than the people in the group who received the placebo. So, for example, let’s imagine a vaccine with a proven efficacy of 80%. This means that – out of the people in the clinical trial – those who received the vaccine were at a 80% lower risk of developing disease  than the group who received the placebo. This is calculated by comparing the number of cases of disease in the vaccinated group versus the placebo group. An efficacy of 80% does not mean that 20% of the vaccinated group will become ill."
+},
+{
+		"title": "Autism and Vaccines",
+		"isAntiVaccine": false,
+		"source": "https://www.cdc.gov/vaccinesafety/concerns/autism.html",
+		"text": "One vaccine ingredient that has been studied specifically is thimerosal. Thimerosal is a mercury-based preservative used to prevent germs (like bacteria and fungi) from contaminating multidose vials of vaccines. Research shows that thimerosal does not cause ASD. In fact, a 2004 scientific review by the IOM concluded that \"the evidence favors rejection of a causal relationship between thimerosal–containing vaccines and autism.\""
+},
+{
+		"title": "MMR vaccination and autism",
+		"isAntiVaccine": true,
+		"source": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(05)75696-8/fulltext",
+		"text": "Can the dramatic increase in autism be ascribed to change in diagnostic practice? Data from the recent California report from the Office of Developmental Services belie this contention. The Figure 1 juxtaposes the data from California with those from north-west London. Identical temporal trends are shown, with the rise in autism from a steady baseline value, coinciding with the introduction of MMR vaccine as the single strategy in both countries that use the same diagnostic criteria for autism."
+}
+]
