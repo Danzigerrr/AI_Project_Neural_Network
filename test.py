@@ -2,7 +2,7 @@ import json
 import pandas
 from sklearn.feature_extraction.text import CountVectorizer
 vv = CountVectorizer()
-with open("s.json") as file:
+with open("s.json", encoding='utf-8') as file:
     data = json.load(file)
 arr = []
 for i in range(0,25):
