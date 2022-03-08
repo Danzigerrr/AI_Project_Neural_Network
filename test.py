@@ -28,6 +28,8 @@ print(v.toarray()[0]) #drukowanie pierwszego wiersza tej macierzy
 df = pandas.DataFrame(data=v.toarray(), columns=vv.get_feature_names()) #konwersja do koncowej tabelki
 print(df)#drukowanie tabeli
 
+# source:   https://github.com/JustGlowing/minisom/blob/master/examples/Classification.ipynb
+
 def classify(som, data):
     """Classifies each sample in data in one of the classes definited
     using the method labels_map.
