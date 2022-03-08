@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
-from minisom import MiniSom
+from minisom import MiniSom #https://github.com/JustGlowing/minisom
 from functions import classify, get_data
 
 data, labels = get_data()
