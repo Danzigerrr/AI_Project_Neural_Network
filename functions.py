@@ -1,5 +1,4 @@
 import json
-import pandas
 from blacklist import blacklist, ignored_tokens
 from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
