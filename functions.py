@@ -1,5 +1,4 @@
 import json
-import pandas
 from blacklist import blacklist, ignored_tokens
 from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
@@ -8,11 +7,11 @@ from collections import Counter
 
 def get_data():
     """Function that gets data from a file"""
-    vv = TfidfVectorizer(stop_words='english')  # obiekt do liczenia slow
+    vectorizer = TfidfVectorizer(stop_words='english')  # obiekt do liczenia slow
     with open("s.json", encoding="utf-8") as file:
         data = json.load(file)
     arr = []  # tabela z tekstami
-    num_of_text = 60  # liczba analizowanych tekstów
+    num_of_text = len(data)  # liczba analizowanych tekstów
     labels = []
     for i in range(0, num_of_text):
         labels.append(data[i]["isAntiVaccine"])
@@ -22,12 +21,8 @@ def get_data():
             st = st.replace(j, " ")
         st = ' '.join(filter(lambda x: blacklist.count(x) == 0, st.split(' ')))
         arr.append(st)
-    vv.fit(arr)  # wrzuecnie do obiektu zeby zaczla liczyc
-    print(vv.vocabulary_)  # drukowanie listy czestosci slow
-    v = vv.transform(arr)  # zamiana na macierz
-    print(v.toarray()[0])  # drukowanie pierwszego wiersza tej macierzy
-    df = pandas.DataFrame(data=v.toarray(), columns=vv.get_feature_names())  # konwersja do koncowej tabelki
-    print(df)  # drukowanie tabeli
+    vectorizer.fit(arr)  # wrzuecnie do obiektu zeby zaczla liczyc
+    v = vectorizer.transform(arr)  # zamiana na macierz
     return v, labels
 
 
