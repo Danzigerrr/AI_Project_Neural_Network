@@ -1,6 +1,6 @@
 import json
 import pandas
-from blacklist import blacklist
+from blacklist import blacklist, ignored_tokens
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -16,8 +16,9 @@ for i in range(0,60):
     labels.append(data[i]["isAntiVaccine"])
     st = data[i]["text"]
     st = st.lower()
-    for j in blacklist:
+    for j in ignored_tokens:
         st = st.replace(j, " ")
+    st = ' '.join(filter(lambda x: blacklist.count(x) == 0, st.split(' ')))
     arr.append(st)
 vv.fit(arr) #wrzuecnie do obiektu zeby zaczla liczyc
 print(vv.vocabulary_) #drukowanie listy czestosci slow
@@ -46,10 +47,10 @@ def classify(som, data):
 
 X_train, X_test, y_train, y_test = train_test_split(v.toarray(), labels, shuffle=False)
 
-som = MiniSom(20, 20, 1491, sigma=10, learning_rate=0.5,
+som = MiniSom(20, 20, v.shape[1], sigma=18, learning_rate=0.1,
               neighborhood_function='triangle', random_seed=10)
 som.pca_weights_init(X_train)
-som.train_random(X_train, 500, verbose=False)
+som.train_random(X_train, 1000, verbose=True)
 
 print(classification_report(y_test, classify(som, X_test)))
 
