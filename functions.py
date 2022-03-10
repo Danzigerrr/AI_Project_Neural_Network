@@ -23,6 +23,7 @@ def get_data():
         arr.append(st)
     vectorizer.fit(arr)  # wrzuecnie do obiektu zeby zaczla liczyc
     v = vectorizer.transform(arr)  # zamiana na macierz
+    print(vectorizer.vocabulary_)
     return v, labels
 
 
