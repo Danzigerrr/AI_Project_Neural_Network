@@ -30,4 +30,3 @@ print(classification_report(y_test, classify(som, X_test, X_train, y_train)))
 
 
 
-
