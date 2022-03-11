@@ -19,6 +19,7 @@ som = MiniSom(15, 15, data.shape[1], sigma=5, learning_rate=0.1,
 som.pca_weights_init(data.toarray())
 som.train_random(data.toarray(), 500, verbose=True)
 
+cb = keras.callbacks.TensorBoard("./logs", update_freq=1)
 model = Sequential(name="A")
 model.add(Input(shape=(data.shape[1],), name="Input"))
 model.add(Dense(math.sqrt(data.shape[1]), activation='sigmoid', use_bias=True, name='Hidden-Layer'))
@@ -36,10 +37,10 @@ model.compile(optimizer='adam', # default='rmsprop', an algorithm to be used in 
              )
 model.fit(X_train, # input data
           y_train, # target data
+          callbacks=[cb],
           batch_size=2, # Number of samples per gradient update. If unspecified, batch_size will default to 32.
           epochs=500, # default=1, Number of epochs to train the model. An epoch is an iteration over the entire x and y data provided
           verbose='auto', # default='auto', ('auto', 0, 1, or 2). Verbosity mode. 0 = silent, 1 = progress bar, 2 = one line per epoch. 'auto' defaults to 1 for most cases, but 2 when used with ParameterServerStrategy.
-          callbacks=None, # default=None, list of callbacks to apply during training. See tf.keras.callbacks
           # validation_split=0.2, # default=0.0, Fraction of the training data to be used as validation data. The model will set apart this fraction of the training data, will not train on it, and will evaluate the loss and any model metrics on this data at the end of each epoch. 
           #validation_data=(X_test, y_test), # default=None, Data on which to evaluate the loss and any model metrics at the end of each epoch. 
           shuffle=True, # default=True, Boolean (whether to shuffle the training data before each epoch) or str (for 'batch').
