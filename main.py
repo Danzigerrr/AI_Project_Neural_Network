@@ -14,10 +14,10 @@ import math
 data, labels = get_data()
 
 X_train, X_test, y_train, y_test = train_test_split(numpy.asarray(data.toarray()), numpy.asarray(labels), shuffle=True)
-som = MiniSom(10, 10, data.shape[1], sigma=3, learning_rate=0.1,
+som = MiniSom(15, 15, data.shape[1], sigma=5, learning_rate=0.1,
               neighborhood_function='triangle', random_seed=10)
 som.pca_weights_init(data.toarray())
-som.train_random(data.toarray(), 500, verbose=False)
+som.train_random(data.toarray(), 500, verbose=True)
 
 model = Sequential(name="A")
 model.add(Input(shape=(data.shape[1],), name="Input"))
