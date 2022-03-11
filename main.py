@@ -23,7 +23,7 @@ model = Sequential(name="A")
 model.add(Input(shape=(data.shape[1],), name="Input"))
 model.add(Dense(math.sqrt(data.shape[1]), activation='sigmoid', use_bias=True, name='Hidden-Layer'))
 model.add(Dense(math.sqrt(data.shape[1])/2, activation='sigmoid', use_bias=True, name='Hidden1'))
-# model.add(Dense(500, activation='softplus', use_bias=True, name='Hidden2'))
+model.add(Dense(math.sqrt(data.shape[1])/4, activation='sigmoid', use_bias=True, name='Hidden2'))
 # model.add(Dense(250, activation='softplus', use_bias=True, name='Hidden3'))
 model.add(Dense(1, activation='sigmoid', use_bias=True, name='Output'))
 model.compile(optimizer='adam', # default='rmsprop', an algorithm to be used in backpropagation
