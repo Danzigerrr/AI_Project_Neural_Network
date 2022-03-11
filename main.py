@@ -15,18 +15,18 @@ import math
 data, labels = get_data()
 
 X_train, X_test, y_train, y_test = train_test_split(numpy.asarray(data.toarray()), numpy.asarray(labels), shuffle=True)
-som = MiniSom(8, 8, data.shape[1], sigma=3, learning_rate=0.1,
+som = MiniSom(10, 10, data.shape[1], sigma=3, learning_rate=0.1,
               neighborhood_function='triangle', random_seed=10)
 som.pca_weights_init(data.toarray())
 som.train_random(data.toarray(), 500, verbose=False)
 
 model = Sequential(name="A")
 model.add(Input(shape=(data.shape[1],), name="Input"))
-model.add(Dense(math.sqrt(data.shape[1]), activation='softplus', use_bias=True, name='Hidden-Layer'))
+model.add(Dense(math.sqrt(data.shape[1]), activation='sigmoid', use_bias=True, name='Hidden-Layer'))
 # model.add(Dense(750, activation='softplus', use_bias=True, name='Hidden1'))
 # model.add(Dense(500, activation='softplus', use_bias=True, name='Hidden2'))
 # model.add(Dense(250, activation='softplus', use_bias=True, name='Hidden3'))
-model.add(Dense(1, activation='softmax', use_bias=True, name='Output'))
+model.add(Dense(1, activation='sigmoid', use_bias=True, name='Output'))
 model.compile(optimizer='adam', # default='rmsprop', an algorithm to be used in backpropagation
               loss='binary_crossentropy', # Loss function to be optimized. A string (name of loss function), or a tf.keras.losses.Loss instance.
               metrics=['Accuracy', 'Precision', 'Recall'], # List of metrics to be evaluated by the model during training and testing. Each of this can be a string (name of a built-in function), function or a tf.keras.metrics.Metric instance. 
