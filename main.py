@@ -4,7 +4,6 @@ from minisom import MiniSom #https://github.com/JustGlowing/minisom
 from functions import classify, get_data
 from pylab import bone,pcolor,colorbar, plot, show
 from tensorflow import keras # for building Neural Networks
-print('Tensorflow/Keras: %s' % keras.__version__) # print version
 from keras.models import Sequential # for creating a linear stack of layers for our Neural Network
 from keras import Input # for instantiating a keras tensor
 from keras.layers import Dense # for creating regular densely-connected NN layer.
@@ -64,17 +63,6 @@ pred_labels_tr = (model.predict(X_train) > 0.5).astype(int)
 pred_labels_te = (model.predict(X_test) > 0.5).astype(int)
 
 
-##### Step 7 - Model Performance Summary
-print("")
-print('-------------------- Model Summary --------------------')
-model.summary() # print model summary
-print("")
-print('-------------------- Weights and Biases --------------------')
-for layer in model.layers:
-    print("Layer: ", layer.name) # print layer name
-    print("  --Kernels (Weights): ", layer.get_weights()[0]) # kernels (weights)
-    print("  --Biases: ", layer.get_weights()[1]) # biases
-print("")
 print('---------- Evaluation on Training Data ----------')
 print(classification_report(y_train, pred_labels_tr))
 print("")
