@@ -7,7 +7,7 @@ from collections import Counter
 
 def get_data():
     """Function that gets data from a file"""
-    vectorizer = TfidfVectorizer(stop_words='english', min_df=0.045)  # obiekt do liczenia slow
+    vectorizer = TfidfVectorizer(stop_words='english', min_df=0.040)  # obiekt do liczenia slow
     with open("s.json", encoding="utf-8") as file:
         data = json.load(file)
     arr = []  # tabela z tekstami
