@@ -1,4 +1,5 @@
 from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
 from sklearn.metrics import classification_report
 from minisom import MiniSom #https://github.com/JustGlowing/minisom
 from functions import classify, get_data
@@ -7,13 +8,13 @@ from tensorflow import keras # for building Neural Networks
 from keras.models import Sequential # for creating a linear stack of layers for our Neural Network
 from keras import Input # for instantiating a keras tensor
 from keras.layers import Dense # for creating regular densely-connected NN layer.
-import numpy
+import numpy as np
 import pandas
 import math
 
 data, labels = get_data()
 
-X_train, X_test, y_train, y_test = train_test_split(numpy.asarray(data.toarray()), numpy.asarray(labels), shuffle=True)
+X_train, X_test, y_train, y_test = train_test_split(np.asarray(data.toarray()), np.asarray(labels), shuffle=True)
 som = MiniSom(15, 15, data.shape[1], sigma=5, learning_rate=0.1,
               neighborhood_function='triangle', random_seed=10)
 som.pca_weights_init(data.toarray())
@@ -39,7 +40,7 @@ model.fit(X_train, # input data
           y_train, # target data
           callbacks=[cb],
           batch_size=2, # Number of samples per gradient update. If unspecified, batch_size will default to 32.
-          epochs=500, # default=1, Number of epochs to train the model. An epoch is an iteration over the entire x and y data provided
+          epochs=200, # default=1, Number of epochs to train the model. An epoch is an iteration over the entire x and y data provided
           verbose='auto', # default='auto', ('auto', 0, 1, or 2). Verbosity mode. 0 = silent, 1 = progress bar, 2 = one line per epoch. 'auto' defaults to 1 for most cases, but 2 when used with ParameterServerStrategy.
           # validation_split=0.2, # default=0.0, Fraction of the training data to be used as validation data. The model will set apart this fraction of the training data, will not train on it, and will evaluate the loss and any model metrics on this data at the end of each epoch. 
           #validation_data=(X_test, y_test), # default=None, Data on which to evaluate the loss and any model metrics at the end of each epoch. 
