@@ -2,7 +2,7 @@ from minisom import MiniSom #https://github.com/JustGlowing/minisom
 from functions import classify, get_data
 from pylab import bone,pcolor,colorbar, plot, show
 def som():
-    data, labels = get_data()
+    data, labels, names= get_data()
     som = MiniSom(15, 15, data.shape[1], sigma=5, learning_rate=0.1,
                   neighborhood_function='triangle', random_seed=10)
     som.pca_weights_init(data.toarray())

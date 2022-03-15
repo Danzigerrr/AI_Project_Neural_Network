@@ -9,6 +9,7 @@ import math
 import numpy as np
 from keras.wrappers.scikit_learn import KerasClassifier
 data, labels = get_data()
+data, labels, names = get_data()
 def create_model():
     model = Sequential(name="A")
     model.add(Input(shape=(data.shape[1],), name="Input"))
