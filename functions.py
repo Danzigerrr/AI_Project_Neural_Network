@@ -1,5 +1,6 @@
 import json
-from blacklist import blacklist, ignored_tokens
+import nltk
+from blacklist import blacklist, ignored_tokens, tag_list
 from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 from collections import Counter
@@ -7,7 +8,7 @@ from collections import Counter
 
 def get_data():
     """Function that gets data from a file"""
-    vectorizer = TfidfVectorizer(stop_words='english', min_df=0.040)  # obiekt do liczenia slow
+    vectorizer = TfidfVectorizer(stop_words='english', min_df=0.035)  # obiekt do liczenia slow
     with open("s.json", encoding="utf-8") as file:
         data = json.load(file)
     arr = []  # tabela z tekstami
@@ -19,7 +20,12 @@ def get_data():
         st = st.lower()
         for j in ignored_tokens:
             st = st.replace(j, " ")
-        st = ' '.join(filter(lambda x: blacklist.count(x) == 0, st.split(' ')))
+        tokens = nltk.word_tokenize(st)
+        tags = nltk.pos_tag(tokens)
+        for (word, tag) in tags:
+            if tag in tag_list:
+                tokens.remove(word)
+        st = ' '.join(filter(lambda x: blacklist.count(x) == 0, tokens))
         arr.append(st)
     vectorizer.fit(arr)  # wrzuecnie do obiektu zeby zaczla liczyc
     v = vectorizer.transform(arr)  # zamiana na macierz
