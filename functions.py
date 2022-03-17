@@ -30,7 +30,7 @@ def get_data():
     vectorizer.fit(arr)  # wrzuecnie do obiektu zeby zaczla liczyc
     v = vectorizer.transform(arr)  # zamiana na macierz
     print(vectorizer.vocabulary_)
-    return v, labels
+    return v, labels, vectorizer.get_feature_names()
 
 
 def classify(som, data, x_train, y_train):

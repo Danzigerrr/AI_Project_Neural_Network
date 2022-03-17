@@ -1,12 +1,15 @@
 from sklearn.metrics import classification_report
+import eli5
 from eli5.sklearn import PermutationImportance
 from sklearn.model_selection import train_test_split
 from keras.models import Sequential # for creating a linear stack of layers for our Neural Network 
 from keras import Input # for instantiating a keras tensor 
 from keras.layers import Dense # for creating regular densely-connected NN layer.
+import matplotlib.pyplot as plt
 import math
 import pandas as pd
 import numpy as np
+from keras.wrappers.scikit_learn import KerasClassifier
 from keras.wrappers.scikit_learn import KerasRegressor
 from variables import data, names, labels
 
@@ -57,5 +60,14 @@ def keras():
         importances.append([names[c], i])
         c += 1
     print(sorted(importances, key = lambda x:x[1]))
+
+    fig, ax = plt.subplots()
+    y_size = np.arange(len(names))
+    ax.barh(y_size, perm.feature_importances_)
+    ax.set_yticks(y_size, labels = names)
+    ax.invert_yaxis()
+    ax.set_xlabel("Importance")
+    plt.show()
+    
 if __name__ == "__main__":
     keras()
