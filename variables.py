@@ -1,3 +1,3 @@
-from functions import get_data
+from func import get_data
 
 data, labels, names = get_data()
