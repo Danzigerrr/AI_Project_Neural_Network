@@ -9,7 +9,7 @@ import math
 import pandas as pd
 import numpy as np
 from keras.wrappers.scikit_learn import KerasClassifier
-from variables import data, names, labels
+from variables import data, names, labels, X_test, y_test, X_train, y_train
 
 
 def create_model():
@@ -28,7 +28,6 @@ def create_model():
 
 
 def keras():
-    X_train, X_test, y_train, y_test = train_test_split(np.asarray(data.toarray()), np.asarray(labels), shuffle=True)
     model = KerasClassifier(build_fn=create_model,
               batch_size=2, # Number of samples per gradient update. If unspecified, batch_size will default to 32.
               epochs=200, # default=1, Number of epochs to train the model. An epoch is an iteration over the entire x and y data provided
