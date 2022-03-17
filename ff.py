@@ -2,8 +2,6 @@ from sklearn.metrics import classification_report
 import eli5
 from eli5.sklearn import PermutationImportance
 from sklearn.model_selection import train_test_split
-from functions import classify, get_data
-from tensorflow import keras # for building Neural Networks
 from keras.models import Sequential # for creating a linear stack of layers for our Neural Network 
 from keras import Input # for instantiating a keras tensor 
 from keras.layers import Dense # for creating regular densely-connected NN layer.
@@ -13,7 +11,9 @@ import pandas as pd
 import numpy as np
 from keras.wrappers.scikit_learn import KerasClassifier
 from keras.wrappers.scikit_learn import KerasRegressor
-data, labels, names = get_data()
+from variables import data, names, labels
+
+
 def create_model():
     model = Sequential(name="A")
     model.add(Input(shape=(data.shape[1],), name="Input"))
@@ -27,9 +27,11 @@ def create_model():
                   metrics=['accuracy', 'Precision', 'Recall'], # List of metrics to be evaluated by the model during training and testing. 
                  )
     return model
+
+
 def keras():
     X_train, X_test, y_train, y_test = train_test_split(np.asarray(data.toarray()), np.asarray(labels), shuffle=True)
-    model = KerasClassifier(build_fn=create_model,
+    model = KerasRegressor(build_fn=create_model,
               batch_size=2, # Number of samples per gradient update. If unspecified, batch_size will default to 32.
               epochs=200, # default=1, Number of epochs to train the model. An epoch is an iteration over the entire x and y data provided
               shuffle=True, # default=True, Boolean (whether to shuffle the training data before each epoch) or str (for 'batch').
@@ -58,6 +60,7 @@ def keras():
         importances.append([names[c], i])
         c += 1
     print(sorted(importances, key = lambda x:x[1]))
+
     fig, ax = plt.subplots()
     y_size = np.arange(len(names))
     ax.barh(y_size, perm.feature_importances_)
@@ -65,5 +68,6 @@ def keras():
     ax.invert_yaxis()
     ax.set_xlabel("Importance")
     plt.show()
+    
 if __name__ == "__main__":
     keras()
