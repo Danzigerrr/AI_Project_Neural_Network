@@ -27,11 +27,12 @@ def svmClassifier():
     snames = []
     simp = []
     for i in ss:
-        snames.append(i.name)
-        simp.append(i.importance)
+        if i.importance != 0:
+            snames.append(i.name)
+            simp.append(i.importance)
 
     fig, ax = plt.subplots()
-    y_size = np.arange(len(names))
+    y_size = np.arange(len(snames))
     ax.barh(y_size, simp)
     ax.set_yticks(y_size, labels=snames)
     ax.invert_yaxis()
