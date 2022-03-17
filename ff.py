@@ -1,3 +1,4 @@
+from matplotlib import pyplot as plt
 from sklearn.metrics import classification_report
 from eli5.sklearn import PermutationImportance
 from sklearn.model_selection import train_test_split
@@ -57,5 +58,14 @@ def keras():
         importances.append([names[c], i])
         c += 1
     print(sorted(importances, key = lambda x:x[1]))
+    fig, ax = plt.subplots()
+    y_size = np.arange(len(names))
+    ax.barh(y_size, perm.feature_importances_)
+    ax.set_yticks(y_size, labels = names)
+    ax.invert_yaxis()
+    ax.set_xlabel("Importance")
+    plt.show()
+
+
 if __name__ == "__main__":
     keras()
