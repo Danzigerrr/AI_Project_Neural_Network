@@ -1,8 +1,13 @@
 from som import som
 from ff import keras
-
+import time
 som()
+
+t1 = time.gmtime(0)
 keras()
+t2 = time.gmtime(0)
+
+print(t2-t1)
 
 
 #------------

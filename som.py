@@ -1,5 +1,5 @@
 from minisom import MiniSom #https://github.com/JustGlowing/minisom
-from pylab import bone, pcolor, colorbar, plot, show
+from matplotlib.pylab import bone, pcolor, colorbar, plot, show
 from variables import data, labels
 import random
 
