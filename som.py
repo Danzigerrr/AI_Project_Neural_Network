@@ -1,6 +1,7 @@
 from minisom import MiniSom #https://github.com/JustGlowing/minisom
 from pylab import bone, pcolor, colorbar, plot, show
 from variables import data, labels
+import random
 
 
 def som():
@@ -12,17 +13,17 @@ def som():
     bone()
     pcolor(som.distance_map().T)
     colorbar()
-    markers = ['o', 's']
+    markers = ['o', 'o']
     colors = ['r', 'g']
     for i, x in enumerate(data.toarray()):
         w = som.winner(x)
-        plot(w[0] + 0.5,
-             w[1] + 0.5,
-             markers[labels[i]],
-             markeredgecolor = colors[labels[i]],
-             markerfacecolor = 'None',
-             markersize = 10,
-             markeredgewidth = 2)
+        plot(w[0] + random.random(),
+            w[1] + random.random(),
+            markers[labels[i]],
+            markeredgecolor=colors[labels[i]],
+            markerfacecolor = colors[labels[i]],
+            markersize=6,
+            markeredgewidth=2)
     show()
 
 
