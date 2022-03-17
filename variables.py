@@ -1,5 +1,4 @@
 from sklearn.model_selection import train_test_split
-from functions import get_data
 import numpy as np
 from func import get_data
 
