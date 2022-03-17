@@ -1,0 +1,38 @@
+----KONSULTACJE NR 1----
+notatki po drugich konsultacjach(sroda 9.03.2022):
+wizualiacja - rysowanie siatki SOM
+zobaczyc na TF a znie na cale TFIDF
+dredukowac z1500 do 200
+wyrac najsitotniejsze slowa
+part of speedch taging
+pokolorac wszgledem  0 i 1
+wpraowdzic nowa siec FitFowrawd  - wezmie polowe tych tekstow i sie przetrenuje (bedzie trnowana na tej zredukowanej tabeli)
+dolozyc tesktow
+ktore slowa sa klczowe do wskania ze dany tekst nalezy do konkretnej klasy
+
+
+----KONSULTACJE NR 2----
+Konsultacje 17.03.2022 po wykladzie z SI:
+
+wybrać najwazniejsze informacje
+
+wybrac podzbior najleszychs slow
+
+posortowac slowa wedlug waznosci
+
+klasyfikator - w jaki sposb doslizsmy do tego jakie slowa są istotne
+
+nn - trudno ziterpreotwac w jaki sposb podejmuje decyjze
+
+svm i bias
+
+feature selection - wylapanie cech 
+
+odifotrwac te ktore są nieskie, a potem narysowc mape --> wtedy mapa bedzie bardziej klarowna, powinno byc wiecej klastrów
+
+
+
+
+
+
+
