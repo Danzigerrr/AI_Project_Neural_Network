@@ -9,16 +9,15 @@ import math
 import pandas as pd
 import numpy as np
 from keras.wrappers.scikit_learn import KerasClassifier
-from variables import names, labels
+from variables import labels, data
 
 
-
-def create_model(data):
+def create_model(d):
     model = Sequential(name="A")
-    model.add(Input(shape=(data.shape[1],), name="Input"))
-    model.add(Dense(math.sqrt(data.shape[1]), activation='sigmoid', use_bias=True, name='Hidden-Layer'))
-    model.add(Dense(math.sqrt(data.shape[1])/2, activation='sigmoid', use_bias=True, name='Hidden1'))
-    model.add(Dense(math.sqrt(data.shape[1])/4, activation='sigmoid', use_bias=True, name='Hidden2'))
+    model.add(Input(shape=(d.shape[1],), name="Input"))
+    model.add(Dense(math.sqrt(d.shape[1]), activation='sigmoid', use_bias=True, name='Hidden-Layer'))
+    model.add(Dense(math.sqrt(d.shape[1])/2, activation='sigmoid', use_bias=True, name='Hidden1'))
+    model.add(Dense(math.sqrt(d.shape[1])/4, activation='sigmoid', use_bias=True, name='Hidden2'))
     # model.add(Dense(250, activation='softplus', use_bias=True, name='Hidden3'))
     model.add(Dense(1, activation='sigmoid', use_bias=True, name='Output'))
     model.compile(optimizer='adam', # default='rmsprop', an algorithm to be used in backpropagation
@@ -28,15 +27,15 @@ def create_model(data):
     return model
 
 
-def keras(data):
+def keras(d):
     #model = KerasClassifier(build_fn=create_model,
     #          batch_size=2, # Number of samples per gradient update. If unspecified, batch_size will default to 32.
     #          epochs=200, # default=1, Number of epochs to train the model. An epoch is an iteration over the entire x and y data provided
     #          shuffle=True, # default=True, Boolean (whether to shuffle the training data before each epoch) or str (for 'batch').
     #          )
 
-    model = create_model(data)
-    X_train, X_test, y_train, y_test = train_test_split(np.asarray(data.toarray()), np.asarray(labels), shuffle=True)
+    model = create_model(d)
+    X_train, X_test, y_train, y_test = train_test_split(np.asarray(d.toarray()), np.asarray(labels), shuffle=True)
 
     model.fit(X_train, y_train, batch_size=2, epochs=1000, verbose='auto', callbacks=None, shuffle=True, class_weight={0: 0.3, 1: 0.7}, sample_weight=None, initial_epoch=0, steps_per_epoch=None, validation_steps=None, validation_batch_size=None, validation_freq=3, max_queue_size=10, workers=1, use_multiprocessing=False)
 
@@ -72,4 +71,4 @@ def keras(data):
 
 
 if __name__ == "__main__":
-    keras()
+    keras(data)

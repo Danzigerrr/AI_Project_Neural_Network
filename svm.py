@@ -6,7 +6,6 @@ from sklearn import svm
 from variables import names, X_train, y_train, X_test, y_test
 from word import Word
 from func import get_important
-from ff import keras
 
 
 def svmClassifier():
@@ -26,14 +25,13 @@ def svmClassifier():
         c += 1
     ss = sorted(importances, key=lambda x:x.importance)
 
-    snamesNotSorted = []
     snames = []
     simp = []
     for i in ss:
         if i.importance != 0:
             snames.append(i.name)
             simp.append(i.importance)
-    importantData, importantNames = get_important(snames)
+
     fig, ax = plt.subplots()
     y_size = np.arange(len(snames))
     ax.barh(y_size, simp)
@@ -41,7 +39,10 @@ def svmClassifier():
     ax.invert_yaxis()
     ax.set_xlabel("Importance")
     plt.show()
-    keras(importantData)
+
+    importantData, importantNames = get_important(snames)
+
+    return importantData
 
 
 if __name__ == "__main__":
