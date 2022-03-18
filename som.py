@@ -4,7 +4,7 @@ from variables import labels
 import random
 
 
-def som():
+def som(data):
     som_size = 15
     som = MiniSom(som_size, som_size, data.shape[1], sigma=5, learning_rate=0.1,
                   neighborhood_function='triangle', random_seed=10)
