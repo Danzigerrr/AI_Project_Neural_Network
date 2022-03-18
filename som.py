@@ -5,7 +5,8 @@ import random
 
 
 def som():
-    som = MiniSom(15, 15, data.shape[1], sigma=5, learning_rate=0.1,
+    som_size = 15
+    som = MiniSom(som_size, som_size, data.shape[1], sigma=5, learning_rate=0.1,
                   neighborhood_function='triangle', random_seed=10)
     som.pca_weights_init(data.toarray())
     som.train_random(data.toarray(), 500, verbose=True)
