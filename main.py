@@ -3,7 +3,7 @@ from ff import keras
 from svm import svmClassifier
 
 som()
-keras()
+#keras()
 svmClassifier()
 
 

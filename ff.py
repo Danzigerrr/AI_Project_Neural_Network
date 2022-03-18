@@ -9,10 +9,11 @@ import math
 import pandas as pd
 import numpy as np
 from keras.wrappers.scikit_learn import KerasClassifier
-from variables import data, names, labels, X_test, y_test, X_train, y_train
+from variables import names, labels
 
 
-def create_model():
+
+def create_model(data):
     model = Sequential(name="A")
     model.add(Input(shape=(data.shape[1],), name="Input"))
     model.add(Dense(math.sqrt(data.shape[1]), activation='sigmoid', use_bias=True, name='Hidden-Layer'))
@@ -27,13 +28,17 @@ def create_model():
     return model
 
 
-def keras():
-    model = KerasClassifier(build_fn=create_model,
-              batch_size=2, # Number of samples per gradient update. If unspecified, batch_size will default to 32.
-              epochs=200, # default=1, Number of epochs to train the model. An epoch is an iteration over the entire x and y data provided
-              shuffle=True, # default=True, Boolean (whether to shuffle the training data before each epoch) or str (for 'batch').
-              )
-    model.fit(X_train, y_train)
+def keras(data):
+    #model = KerasClassifier(build_fn=create_model,
+    #          batch_size=2, # Number of samples per gradient update. If unspecified, batch_size will default to 32.
+    #          epochs=200, # default=1, Number of epochs to train the model. An epoch is an iteration over the entire x and y data provided
+    #          shuffle=True, # default=True, Boolean (whether to shuffle the training data before each epoch) or str (for 'batch').
+    #          )
+
+    model = create_model(data)
+    X_train, X_test, y_train, y_test = train_test_split(np.asarray(data.toarray()), np.asarray(labels), shuffle=True)
+
+    model.fit(X_train, y_train, batch_size=2, epochs=1000, verbose='auto', callbacks=None, shuffle=True, class_weight={0: 0.3, 1: 0.7}, sample_weight=None, initial_epoch=0, steps_per_epoch=None, validation_steps=None, validation_batch_size=None, validation_freq=3, max_queue_size=10, workers=1, use_multiprocessing=False)
 
     ##### Step 6 - Use model to make predictions
     # Predict class labels on training data
@@ -41,7 +46,7 @@ def keras():
     # Predict class labels on a test data
     pred_labels_te = (model.predict(X_test) > 0.5).astype(int)
 
-    perm = PermutationImportance(model).fit(X_test, y_test)
+    #perm = PermutationImportance(model).fit(X_test, y_test)
 
     print('---------- Evaluation on Training Data ----------')
     print(classification_report(y_train, pred_labels_tr))
@@ -51,19 +56,19 @@ def keras():
     print(classification_report(y_test, pred_labels_te))
     print("")
 
-    c = 0
-    importances = []
-    for i in perm.feature_importances_:
-        importances.append([names[c], i])
-        c += 1
-    print(sorted(importances, key = lambda x:x[1]))
-    fig, ax = plt.subplots()
-    y_size = np.arange(len(names))
-    ax.barh(y_size, perm.feature_importances_)
-    ax.set_yticks(y_size, labels = names)
-    ax.invert_yaxis()
-    ax.set_xlabel("Importance")
-    plt.show()
+    #c = 0
+    #importances = []
+    #for i in perm.feature_importances_:
+    #    importances.append([names[c], i])
+    #    c += 1
+    #print(sorted(importances, key = lambda x:x[1]))
+    #fig, ax = plt.subplots()
+    #y_size = np.arange(len(names))
+    #ax.barh(y_size, perm.feature_importances_)
+    #ax.set_yticks(y_size, labels = names)
+    #ax.invert_yaxis()
+    #ax.set_xlabel("Importance")
+    #plt.show()
 
 
 if __name__ == "__main__":
