@@ -6,6 +6,7 @@ from sklearn import svm
 from variables import names, X_train, y_train, X_test, y_test
 from word import Word
 import sys
+from func import get_important
 
 def svmClassifier():
     svc = svm.SVC(kernel='linear', verbose=True)
@@ -37,6 +38,10 @@ def svmClassifier():
     ax.invert_yaxis()
     ax.set_xlabel("Importance")
     plt.show()
+
+    importantData, importantNames = get_important(snames)
+
+    return importantData
 
 
 if __name__ == "__main__":

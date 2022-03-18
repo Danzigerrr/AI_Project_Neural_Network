@@ -1,6 +1,6 @@
 from minisom import MiniSom #https://github.com/JustGlowing/minisom
 from matplotlib.pylab import bone, pcolor, colorbar, plot, show
-from variables import data, labels
+from variables import labels
 import random
 
 
@@ -29,4 +29,5 @@ def som():
 
 
 if __name__ == "__main__":
-    som()
+    from variables import data
+    som(data)
