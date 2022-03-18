@@ -4,6 +4,6 @@ from svm import svmClassifier
 
 
 data = svmClassifier()
+som(data)
 keras(data)
-som()
 

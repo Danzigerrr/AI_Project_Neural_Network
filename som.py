@@ -1,10 +1,10 @@
 from minisom import MiniSom #https://github.com/JustGlowing/minisom
 from matplotlib.pylab import bone, pcolor, colorbar, plot, show
-from variables import data, labels
+from variables import labels
 import random
 
 
-def som():
+def som(data):
     som = MiniSom(15, 15, data.shape[1], sigma=5, learning_rate=0.1,
                   neighborhood_function='triangle', random_seed=10)
     som.pca_weights_init(data.toarray())
@@ -28,4 +28,5 @@ def som():
 
 
 if __name__ == "__main__":
-    som()
+    from variables import data
+    som(data)
