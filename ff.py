@@ -9,7 +9,9 @@ import math
 import pandas as pd
 import numpy as np
 from keras.wrappers.scikit_learn import KerasClassifier
-from variables import labels, data
+from variables import labels, data, names
+import shap
+import tensorflow as tf
 
 
 def create_model(d):
@@ -28,6 +30,7 @@ def create_model(d):
 
 
 def keras(d):
+    tf.compat.v1.disable_v2_behavior()
     #model = KerasClassifier(build_fn=create_model,
     #          batch_size=2, # Number of samples per gradient update. If unspecified, batch_size will default to 32.
     #          epochs=200, # default=1, Number of epochs to train the model. An epoch is an iteration over the entire x and y data provided
@@ -37,7 +40,7 @@ def keras(d):
     model = create_model(d)
     X_train, X_test, y_train, y_test = train_test_split(np.asarray(d.toarray()), np.asarray(labels), shuffle=True)
 
-    model.fit(X_train, y_train, batch_size=2, epochs=1000, verbose='auto', callbacks=None, shuffle=True, class_weight={0: 0.3, 1: 0.7}, sample_weight=None, initial_epoch=0, steps_per_epoch=None, validation_steps=None, validation_batch_size=None, validation_freq=3, max_queue_size=10, workers=1, use_multiprocessing=False)
+    model.fit(X_train, y_train, batch_size=2, epochs=300, verbose='auto', shuffle=True, class_weight={0: 0.3, 1: 0.7}, initial_epoch=0)
 
     ##### Step 6 - Use model to make predictions
     # Predict class labels on training data
@@ -47,6 +50,12 @@ def keras(d):
 
     #perm = PermutationImportance(model).fit(X_test, y_test)
 
+    exp = shap.DeepExplainer(model, X_train)
+    shapVal = exp.shap_values(X_train)
+    print(shapVal[0][0])
+    shap.summary_plot(shapVal[0], X_train.astype("float"), names, len(names))
+    # print(shapVal.data[0])
+    # print(shapVal.data[1])
     print('---------- Evaluation on Training Data ----------')
     print(classification_report(y_train, pred_labels_tr))
     print("")
