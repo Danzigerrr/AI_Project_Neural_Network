@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 from sklearn import svm
 from variables import names, X_train, y_train, X_test, y_test
 from word import Word
+import sys
 from func import get_important
-
 
 def svmClassifier():
     svc = svm.SVC(kernel='linear', verbose=True)
@@ -24,15 +24,13 @@ def svmClassifier():
         importances.append(Word(names[c], i))
         c += 1
     ss = sorted(importances, key=lambda x:x.importance)
-
-    snamesNotSorted = []
     snames = []
     simp = []
     for i in ss:
-        if i.importance != 0:
+        if i.importance > sys.float_info.epsilon or i.importance < -sys.float_info.epsilon:
             snames.append(i.name)
             simp.append(i.importance)
-    importantData, importantNames = get_important(snames)
+
     fig, ax = plt.subplots()
     y_size = np.arange(len(snames))
     ax.barh(y_size, simp)
@@ -41,6 +39,9 @@ def svmClassifier():
     ax.set_xlabel("Importance")
     plt.show()
 
+    importantData, importantNames = get_important(snames)
+
+    return importantData
 
 
 if __name__ == "__main__":
