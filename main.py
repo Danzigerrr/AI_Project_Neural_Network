@@ -1,9 +1,10 @@
-from som import som
+from som import som, plotSom
 from ff import keras
 from svm import getImportantData
 
 
 data = getImportantData()
-som(data)
+somModel = som(data)
+plotSom(somModel, data)
 keras(data)
 
