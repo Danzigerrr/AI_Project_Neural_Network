@@ -34,6 +34,7 @@ def create_model(d):
 def keras(d):
     tf.compat.v1.disable_v2_behavior()
     model = create_model(d)
+    X_train, X_test, y_train, y_test = train_test_split(np.asarray(d.toarray()), np.asarray(labels), shuffle=True)
     model.fit(X_train, y_train, batch_size=2, epochs=300, verbose='auto', shuffle=True, class_weight={0: 0.3, 1: 0.7}, initial_epoch=0)
 
 
