@@ -23,7 +23,7 @@ def somWithClassInfo(data):
     model = som(df.values)
 
 
-    plotSom(model, df)
+    plotSom(model, df.to_numpy())
     return model
 
 def plotSom(som, data):
@@ -31,7 +31,7 @@ def plotSom(som, data):
     pcolor(som.distance_map().T)
     colorbar()
     colors = ['r', 'g']
-    for i, x in enumerate(data.to_numpy()):
+    for i, x in enumerate(data):
         print("i: " + str(i) + "x: " + str(x))
         w = som.winner(x)
         plot(w[0] + random.random(),
