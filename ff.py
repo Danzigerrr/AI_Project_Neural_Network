@@ -12,7 +12,9 @@ from keras.wrappers.scikit_learn import KerasClassifier
 from variables import labels, data, names
 import shap
 import tensorflow as tf
+from metrics import permutationImportance, plotImportant
 
+from variables import X_train, X_test, y_train, y_test
 
 def create_model(d):
     model = Sequential(name="A")
@@ -31,31 +33,22 @@ def create_model(d):
 
 def keras(d):
     tf.compat.v1.disable_v2_behavior()
-    #model = KerasClassifier(build_fn=create_model,
-    #          batch_size=2, # Number of samples per gradient update. If unspecified, batch_size will default to 32.
-    #          epochs=200, # default=1, Number of epochs to train the model. An epoch is an iteration over the entire x and y data provided
-    #          shuffle=True, # default=True, Boolean (whether to shuffle the training data before each epoch) or str (for 'batch').
-    #          )
-
     model = create_model(d)
-    X_train, X_test, y_train, y_test = train_test_split(np.asarray(d.toarray()), np.asarray(labels), shuffle=True)
-
     model.fit(X_train, y_train, batch_size=2, epochs=300, verbose='auto', shuffle=True, class_weight={0: 0.3, 1: 0.7}, initial_epoch=0)
 
-    ##### Step 6 - Use model to make predictions
-    # Predict class labels on training data
-    pred_labels_tr = (model.predict(X_train) > 0.5).astype(int)
-    # Predict class labels on a test data
-    pred_labels_te = (model.predict(X_test) > 0.5).astype(int)
 
-    #perm = PermutationImportance(model).fit(X_test, y_test)
-
+    return model
+def keras_shap(model):
     exp = shap.DeepExplainer(model, X_train)
     shapVal = exp.shap_values(X_train)
     print(shapVal[0][0])
     shap.summary_plot(shapVal[0], X_train.astype("float"), names, len(names))
-    # print(shapVal.data[0])
-    # print(shapVal.data[1])
+
+def keras_classify(model):
+    pred_labels_tr = (model.predict(X_train) > 0.5).astype(int)
+    pred_labels_te = (model.predict(X_test) > 0.5).astype(int)
+
+
     print('---------- Evaluation on Training Data ----------')
     print(classification_report(y_train, pred_labels_tr))
     print("")
@@ -64,20 +57,17 @@ def keras(d):
     print(classification_report(y_test, pred_labels_te))
     print("")
 
-    #c = 0
-    #importances = []
-    #for i in perm.feature_importances_:
-    #    importances.append([names[c], i])
-    #    c += 1
-    #print(sorted(importances, key = lambda x:x[1]))
-    #fig, ax = plt.subplots()
-    #y_size = np.arange(len(names))
-    #ax.barh(y_size, perm.feature_importances_)
-    #ax.set_yticks(y_size, labels = names)
-    #ax.invert_yaxis()
-    #ax.set_xlabel("Importance")
-    #plt.show()
+def keras_permutations(d):
+    model = KerasClassifier(build_fn=lambda:create_model(d), batch_size=2, epochs=200, shuffle=True)
+    model.fit(X_train, y_train, batch_size=2, epochs=300, verbose='auto', shuffle=True, class_weight={0: 0.3, 1: 0.7}, initial_epoch=0)
 
+    imp, names = permutationImportance(model)
+    plotImportant(names, imp)
 
 if __name__ == "__main__":
-    keras(data)
+    model = keras(data)
+    keras_shap(model)
+    keras_classify(model)
+
+    keras_permutations(data)
+
