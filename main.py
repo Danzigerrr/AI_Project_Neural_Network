@@ -4,7 +4,7 @@ from svm import getImportantData
 
 
 data = getImportantData()
-somModel = som(data)
-plotSom(somModel, data)
+somModel = som(data.toarray())
+plotSom(somModel, data.toarray())
 keras(data)
 
