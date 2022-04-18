@@ -3,7 +3,13 @@ import nltk
 import pandas
 from blacklist import blacklist, ignored_tokens, tag_list
 from sklearn.feature_extraction.text import TfidfVectorizer
+from whitelist import whitelist
 import numpy as np
+
+import pandas as pd
+from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import chi2
+
 from collections import Counter
 
 with open("s.json", encoding="utf-8") as file:
@@ -27,11 +33,29 @@ def get_data():
         for (word, tag) in tags:
             if tag in tag_list:
                 tokens.remove(word)
-        st = ' '.join(filter(lambda x: blacklist.count(x) == 0, tokens))
+        for i in tokens:
+            if i not in whitelist:
+                pass
+                # tokens.remove(i)
+        # st = ' '.join(filter(lambda x: blacklist.count(x) == 0 , tokens))
+        st = ' '.join(filter(lambda x: blacklist.count(x) == 0 and whitelist.count(x) == 1, tokens))
         arr.append(st)
     vectorizer.fit(arr)  # wrzuecnie do obiektu zeby zaczla liczyc
     v = vectorizer.transform(arr)  # zamiana na macierz
-    print(vectorizer.vocabulary_)
+
+
+    best = SelectKBest(score_func=chi2, k=3)
+    fit = best.fit(v, labels)
+
+    dfscores = pd.DataFrame(fit.scores_)
+    dfcolumns = pd.DataFrame(vectorizer.get_feature_names())
+    #concat two dataframes
+    featureScores = pd.concat([dfcolumns,dfscores],axis=1)
+    featureScores.columns = ["Spec", "Scores"]
+    print(featureScores.nlargest(30,"Scores"))
+
+
+    # print(vectorizer.vocabulary_)
     return v, labels, vectorizer.get_feature_names()
 
 

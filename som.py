@@ -7,8 +7,8 @@ import numpy as np
 import pandas as pd
 
 def som(data):
-    som_size = 15
-    som = MiniSom(som_size, som_size, data.shape[1], sigma=5, learning_rate=0.1,
+    som_size = 10
+    som = MiniSom(som_size, som_size, data.shape[1], sigma=10, learning_rate=0.1,
                   neighborhood_function='triangle', random_seed=10)
     som.pca_weights_init(data)
     som.train_random(data, 500, verbose=True)
@@ -32,7 +32,7 @@ def plotSom(som, data):
     colorbar()
     colors = ['r', 'g']
     for i, x in enumerate(data):
-        print("i: " + str(i) + "x: " + str(x))
+        # print("i: " + str(i) + "x: " + str(x))
         w = som.winner(x)
         plot(w[0] + random.random(),
             w[1] + random.random(),
