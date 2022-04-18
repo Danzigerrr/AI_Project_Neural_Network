@@ -1,4 +1,5 @@
 import json
+import matplotlib.pyplot as plt
 import nltk
 import pandas
 from blacklist import blacklist, ignored_tokens, tag_list
@@ -10,8 +11,8 @@ with open("s.json", encoding="utf-8") as file:
     data = json.load(file)
 num_of_text = len(data)  # liczba analizowanych tekstów
 
-
 def get_data():
+    long_string = ""
     """Function that gets data from a file"""
     vectorizer = TfidfVectorizer(stop_words='english', min_df=0.035)  # obiekt do liczenia slow
     arr = []  # tabela z tekstami
@@ -29,11 +30,33 @@ def get_data():
                 tokens.remove(word)
         st = ' '.join(filter(lambda x: blacklist.count(x) == 0, tokens))
         arr.append(st)
+        long_string += st
+    showWordFrequency(long_string)
     vectorizer.fit(arr)  # wrzuecnie do obiektu zeby zaczla liczyc
     v = vectorizer.transform(arr)  # zamiana na macierz
     print(vectorizer.vocabulary_)
     return v, labels, vectorizer.get_feature_names()
 
+def showWordFrequency(long_string):
+    va = TfidfVectorizer(stop_words='english', min_df=0.96)  # obiekt do liczenia slow
+    va.fit([long_string])
+    vva = va.transform([long_string]).toarray()
+    df = pandas.DataFrame(data=vva, columns=va.get_feature_names())
+    print(df)
+    v_p = []
+    n_p = []
+    vva = np.transpose(vva)
+    for i in range(0,len(vva)):
+        if vva[i] > .05:
+            v_p.append(vva[i][0])
+            n_p.append(va.get_feature_names()[i])
+    _, ax = plt.subplots()
+    ysize = np.arange(len(n_p))
+    print(v_p)
+    ax.barh(ysize, v_p)
+    ax.set_yticks(ysize, labels=n_p)
+    ax.invert_yaxis()
+    plt.show()
 
 def get_important(vocab):
     """Function that transforms vocab into vector space"""
