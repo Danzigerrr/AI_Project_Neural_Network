@@ -12,7 +12,18 @@ num_of_text = len(data)  # liczba analizowanych tekstów
 
 
 def get_data():
-    """Function that gets data from a file"""
+    """
+    This functions gets the data
+
+    Parameters:
+        :none
+
+    Returns:
+        :v (int): matrix
+        :labels: whatever
+        :featureNames: feature names from vectorizer
+
+    """
     vectorizer = TfidfVectorizer(stop_words='english', min_df=0.035)  # obiekt do liczenia slow
     arr = []  # tabela z tekstami
     labels = []
@@ -32,7 +43,8 @@ def get_data():
     vectorizer.fit(arr)  # wrzuecnie do obiektu zeby zaczla liczyc
     v = vectorizer.transform(arr)  # zamiana na macierz
     print(vectorizer.vocabulary_)
-    return v, labels, vectorizer.get_feature_names()
+    featureNames = vectorizer.get_feature_names()
+    return v, labels, featureNames
 
 
 def get_important(vocab):
