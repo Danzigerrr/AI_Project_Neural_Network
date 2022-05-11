@@ -11,6 +11,7 @@ from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import chi2
 
 from collections import Counter
+from whitelist import *
 
 with open("s.json", encoding="utf-8") as file:
     data = json.load(file)
@@ -18,6 +19,12 @@ num_of_text = len(data)  # liczba analizowanych tekstów
 
 
 def get_data():
+
+    # print(len(whitelist_0))
+    # print(len(whitelist))
+    # print(len(whitelist_2))
+    # print(len(whitelist_3))
+
     """Function that gets data from a file"""
     vectorizer = TfidfVectorizer(stop_words='english', min_df=0.035)  # obiekt do liczenia slow
     arr = []  # tabela z tekstami
