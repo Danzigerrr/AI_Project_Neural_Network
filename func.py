@@ -23,6 +23,12 @@ def get_data():
         :labels: whatever
         :featureNames: feature names from vectorizer
 
+    :param etype: exception type
+    :param value: exception value
+    :param tb: traceback object
+
+
+    pobiera z pliku
     """
     vectorizer = TfidfVectorizer(stop_words='english', min_df=0.035)  # obiekt do liczenia slow
     arr = []  # tabela z tekstami
@@ -48,6 +54,9 @@ def get_data():
 
 
 def get_important(vocab):
+    #genreownaie nowej prestrezni wekt. ksladajacej sie tlyko z istonych slow
+    # iteruje przez jesli pasuja to wrzuca je, a jesli nie ma ich w "vocav" to je pomija
+
     """Function that transforms vocab into vector space"""
     vectorizer = TfidfVectorizer()  # obiekt do liczenia slow
     arr = []  # tabela z tekstami

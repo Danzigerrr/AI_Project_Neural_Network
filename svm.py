@@ -8,16 +8,20 @@ from func import get_important
 from metrics import permutationImportance, plotImportant
 
 def svmClassifier():
+    # klasyfikator -> tworzy kalsyfiatokow
     svc = svm.SVC(kernel='linear', verbose=True)
     svc.fit(X_train, y_train)
     return svc
 
 def classify(model):
+    # klasyfikuje, wypisuje sie classificaiton report
     y_pred = model.predict(X_test)
     print(confusion_matrix(y_test, y_pred))
     print(classification_report(y_test, y_pred))
 
 def getImportantData():
+    # wywoluje
+    # zwraca nową przestrzen
     svc = svmClassifier()
     _, snames = permutationImportance(svc)
     importantData, _ = get_important(snames)

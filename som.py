@@ -7,6 +7,8 @@ import numpy as np
 import pandas as pd
 
 def som(data):
+    # bez udziwnien
+    # data --> model przestrzeni wektorowej
     som_size = 15
     som = MiniSom(som_size, som_size, data.shape[1], sigma=5, learning_rate=0.1,
                   neighborhood_function='triangle', random_seed=10)
@@ -15,6 +17,7 @@ def som(data):
     return som
 
 def somWithClassInfo(data):
+    # z dodaną kolumna czy jest za czy przeciw szczepienieiom
     d = copy.copy(data)
     # for i in range(0, d.shape[0]):
     df = pd.DataFrame(d.toarray())
@@ -27,6 +30,7 @@ def somWithClassInfo(data):
     return model
 
 def plotSom(som, data):
+    # rysowanie kafelków
     bone()
     pcolor(som.distance_map().T)
     colorbar()

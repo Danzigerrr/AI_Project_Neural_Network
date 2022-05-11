@@ -5,6 +5,8 @@ import sys
 import matplotlib.pyplot as plt
 import numpy as np
 def permutationImportance(model):
+    # permutacje przestrzeni wektorowej slow
+    # testuje jak permutcj ewplywaja na klasyfikacje
     perm = PermutationImportance(model).fit(X_test, y_test)
     importances = []
     c = 0
@@ -20,6 +22,7 @@ def permutationImportance(model):
             simp.append(i.importance)
     return simp, snames
 def plotImportant(names, importances):
+    # tworzenie wykresu z Importance
     _, ax = plt.subplots()
     y_size = np.arange(len(names))
     ax.barh(y_size, importances)
