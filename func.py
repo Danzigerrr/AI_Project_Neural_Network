@@ -2,6 +2,7 @@ import json
 import nltk
 import pandas
 from blacklist import blacklist, ignored_tokens, tag_list
+from mappings import word_map
 from sklearn.feature_extraction.text import TfidfVectorizer
 import numpy as np
 from collections import Counter
@@ -44,6 +45,9 @@ def get_data():
         for (word, tag) in tags:
             if tag in tag_list:
                 tokens.remove(word)
+        for (w, m) in word_map.items():
+            tokens = list(map(lambda it: it.replace(w,m), tokens))
+
         st = ' '.join(filter(lambda x: blacklist.count(x) == 0, tokens))
         arr.append(st)
     vectorizer.fit(arr)  # wrzuecnie do obiektu zeby zaczla liczyc
