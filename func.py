@@ -3,7 +3,7 @@ import nltk
 import pandas
 from blacklist import blacklist, ignored_tokens, tag_list
 from sklearn.feature_extraction.text import TfidfVectorizer
-from whitelist import whitelist
+from whitelist import *
 import numpy as np
 
 import pandas as pd
@@ -19,12 +19,13 @@ num_of_text = len(data)  # liczba analizowanych tekstów
 
 
 def get_data():
-
+    used_whitelist = whitelist_0
+    print("------- LENGTH: -------")
     # print(len(whitelist_0))
-    # print(len(whitelist))
+    print(len(used_whitelist))
     # print(len(whitelist_2))
     # print(len(whitelist_3))
-
+    print("------- LENGTH: -------")
     """Function that gets data from a file"""
     vectorizer = TfidfVectorizer(stop_words='english', min_df=0.035)  # obiekt do liczenia slow
     arr = []  # tabela z tekstami
@@ -41,28 +42,26 @@ def get_data():
             if tag in tag_list:
                 tokens.remove(word)
         for i in tokens:
-            if i not in whitelist:
+            if i not in used_whitelist:
                 pass
                 # tokens.remove(i)
         # st = ' '.join(filter(lambda x: blacklist.count(x) == 0 , tokens))
-        st = ' '.join(filter(lambda x: blacklist.count(x) == 0 and whitelist.count(x) == 1, tokens))
+        st = ' '.join(filter(lambda x: blacklist.count(x) == 0 and used_whitelist.count(x) == 1, tokens))
         arr.append(st)
     vectorizer.fit(arr)  # wrzuecnie do obiektu zeby zaczla liczyc
     v = vectorizer.transform(arr)  # zamiana na macierz
 
-
+    # create whitelist
     best = SelectKBest(score_func=chi2, k=3)
     fit = best.fit(v, labels)
-
     dfscores = pd.DataFrame(fit.scores_)
     dfcolumns = pd.DataFrame(vectorizer.get_feature_names())
-    #concat two dataframes
-    featureScores = pd.concat([dfcolumns,dfscores],axis=1)
+    # concat two dataframes
+    featureScores = pd.concat([dfcolumns, dfscores], axis=1)
     featureScores.columns = ["Spec", "Scores"]
-    print(featureScores.nlargest(30,"Scores"))
-
-
+    print(featureScores.nlargest(30, "Scores"))
     # print(vectorizer.vocabulary_)
+
     return v, labels, vectorizer.get_feature_names()
 
 

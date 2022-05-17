@@ -2,3 +2,8 @@ whitelist_0 = ["safe", "cells", "children", "body", "risk", "parents", "reasons"
 whitelist = ["cells", "adults", "risks", "cell", "children", "usually", "safe", "polio", "kids", "care", "blood", "reasons", "religious"]
 whitelist_2 = ["cells", "adults", "safe", "cell", "risks", "children", "blood", "reasons", "usually", "religious", "protection", "kids", "care", "protein", "immune", "big", "vessel", "type", "polio", "cov", "threat", "sars", "spike", "childhood", "vessels", "future", "fully", "cold", "diseases", "longer"]
 whitelist_3 = ["cells", "adults", "safe", "cell", "risks", "children", "blood", "reasons", "usually", "religious", "protection", "kids", "care", "protein", "immune", "big", "vessel"]
+
+whitelist_10 = ["adults", "body", "care", "cdc", "cell", "cells", "children", "covid", "deaths", "disease", "doctors"]
+whitelist_20 = ["adults", "body", "care", "cdc", "cell", "cells", "children", "covid", "deaths", "disease", "doctors", "effects", "experimental", "fact", "ill", "immunity", "infection", "kids", "lives", "lower", "old"]
+whitelist_30 = ["adults", "body", "care", "cdc", "cell", "cells", "children", "covid", "deaths", "disease", "doctors", "effects", "experimental", "fact", "ill", "immunity", "infection", "kids", "lives", "lower", "old", "parents", "past", "people", "polio", "protection", "rapidly", "rare", "reasons", "religious", "research"]
+whitelist_40 = ["adults", "body", "care", "cdc", "cell", "cells", "children", "covid", "deaths", "disease", "doctors", "effects", "experimental", "fact", "ill", "immunity", "infection", "kids", "lives", "lower", "old", "parents", "past", "people", "polio", "protection", "rapidly", "rare", "reasons", "religious", "research"]
