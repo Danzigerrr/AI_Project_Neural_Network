@@ -83,17 +83,65 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="som.plotSom">
 <span class="sig-prename descclassname"><span class="pre">som.</span></span><span class="sig-name descname"><span class="pre">plotSom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">som</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#som.plotSom" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>This function is used to plot som. Colors, sizes and data can be set here.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">som</dt>
+<dd class="field-odd"><p>trained SOM model</p>
+</dd>
+<dt class="field-even">data</dt>
+<dd class="field-even"><p>words in an array</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="som.som">
 <span class="sig-prename descclassname"><span class="pre">som.</span></span><span class="sig-name descname"><span class="pre">som</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#som.som" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>This functions creates and trains SOM basing on provided data.</p>
+<dl class="simple">
+<dt>Parameters</dt><dd><dl class="field-list simple">
+<dt class="field-odd">data</dt>
+<dd class="field-odd"><p>array of importance of words</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns</dt><dd><dl class="field-list simple">
+<dt class="field-odd">vectorizer_dt</dt>
+<dd class="field-odd"><p>TF-IDF is a numerical statistic that is intended to reflect how important a word is to a document</p>
+</dd>
+<dt class="field-even">labels save</dt>
+<dd class="field-even"><p>info about isAntiVaccine</p>
+</dd>
+<dt class="field-odd">featureNames</dt>
+<dd class="field-odd"><p>feature names from vectorizer_dt got from texts basing on TF-IDF method</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="som.somWithClassInfo">
 <span class="sig-prename descclassname"><span class="pre">som.</span></span><span class="sig-name descname"><span class="pre">somWithClassInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#som.somWithClassInfo" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>SOM with additional column representing if the text is for or against vaccination.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">data</dt>
+<dd class="field-odd"><p>array of words from vectorizer</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">model</dt>
+<dd class="field-odd"><p>trained SOM model</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 

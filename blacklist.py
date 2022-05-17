@@ -1,9 +1,5 @@
 """
-
     This file includes arrays used in get_data functions
-
-
-
 """
 
 

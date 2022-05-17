@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- saved from url=(0116)file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/som.html -->
+<html class="writer-html5" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>som module — AI_Project_Neural_Network 1.0 documentation</title>
+      <link rel="stylesheet" href="./Documentation_version_1_files/pygments.css" type="text/css">
+      <link rel="stylesheet" href="./Documentation_version_1_files/theme.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="./Documentation_version_1_files/documentation_options.js.pobrane"></script>
+        <script src="./Documentation_version_1_files/jquery.js.pobrane"></script>
+        <script src="./Documentation_version_1_files/underscore.js.pobrane"></script>
+        <script src="./Documentation_version_1_files/doctools.js.pobrane"></script>
+    <script src="./Documentation_version_1_files/theme.js.pobrane"></script>
+    <link rel="index" title="Index" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/genindex.html">
+    <link rel="search" title="Search" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/search.html">
+    <link rel="next" title="svm module" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/svm.html">
+    <link rel="prev" title="metrics module" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/metrics.html"> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+            <a href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/index.html" class="icon icon-home"> AI_Project_Neural_Network
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs">
+    <input type="hidden" name="check_keywords" value="yes">
+    <input type="hidden" name="area" value="default">
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current" aria-expanded="true">
+<li class="toctree-l1 current" aria-expanded="true"><a class="reference internal" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/modules.html"><button class="toctree-expand" title="Open/close menu"></button>AI_Project_Neural_Network</a><ul class="" aria-expanded="false">
+<li class="toctree-l2"><a class="reference internal" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/blacklist.html">blacklist module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/ff.html">ff module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/func.html">func module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/metrics.html">metrics module</a></li>
+<li class="toctree-l2 current" aria-expanded="true"><a class="reference internal current" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/som.html#" aria-expanded="true">som module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/svm.html">svm module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/variables.html">variables module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/word.html">word module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/index.html">AI_Project_Neural_Network</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/index.html" class="icon icon-home"></a> »</li>
+          <li><a href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/modules.html">AI_Project_Neural_Network</a> »</li>
+      <li>som module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/_sources/som.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-som">
+<span id="som-module"></span><h1>som module<a class="headerlink" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/som.html#module-som" title="Permalink to this headline"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="som.plotSom">
+<span class="sig-prename descclassname"><span class="pre">som.</span></span><span class="sig-name descname"><span class="pre">plotSom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">som</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/som.html#som.plotSom" title="Permalink to this definition"></a></dt>
+<dd><p>This function is used to plot som. Colors, sizes and data can be set here.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">som</dt>
+<dd class="field-odd"><p>trained SOM model</p>
+</dd>
+<dt class="field-even">data</dt>
+<dd class="field-even"><p>words in an array</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="som.som">
+<span class="sig-prename descclassname"><span class="pre">som.</span></span><span class="sig-name descname"><span class="pre">som</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/som.html#som.som" title="Permalink to this definition"></a></dt>
+<dd><p>This functions creates and trains SOM basing on provided data.</p>
+<dl class="simple">
+<dt>Parameters</dt><dd><dl class="field-list simple">
+<dt class="field-odd">data</dt>
+<dd class="field-odd"><p>array of importance of words</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns</dt><dd><dl class="field-list simple">
+<dt class="field-odd">vectorizer_dt</dt>
+<dd class="field-odd"><p>TF-IDF is a numerical statistic that is intended to reflect how important a word is to a document</p>
+</dd>
+<dt class="field-even">labels save</dt>
+<dd class="field-even"><p>info about isAntiVaccine</p>
+</dd>
+<dt class="field-odd">featureNames</dt>
+<dd class="field-odd"><p>feature names from vectorizer_dt got from texts basing on TF-IDF method</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="som.somWithClassInfo">
+<span class="sig-prename descclassname"><span class="pre">som.</span></span><span class="sig-name descname"><span class="pre">somWithClassInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/som.html#som.somWithClassInfo" title="Permalink to this definition"></a></dt>
+<dd><p>SOM with additional column representing if the text is for or against vaccination.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">data</dt>
+<dd class="field-odd"><p>array of words from vectorizer</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">model</dt>
+<dd class="field-odd"><p>trained SOM model</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/metrics.html" class="btn btn-neutral float-left" title="metrics module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="file:///C:/Informatyka/4%20SEMESTR/Sztuczna%20Inteligencja/PROJ3/AI_Project_Neural_Network/Docs/_build/html/svm.html" class="btn btn-neutral float-right" title="svm module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr>
+
+  <div role="contentinfo">
+    <p>© Copyright 2022, Bogna Lew, Bartosz Strzelecki, Krzysztof Nazar.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org/">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+
+</body></html>

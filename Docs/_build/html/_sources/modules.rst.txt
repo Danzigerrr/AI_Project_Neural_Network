@@ -8,6 +8,7 @@ AI_Project_Neural_Network
    ff
    func
    main
+   mappings
    metrics
    som
    svm
