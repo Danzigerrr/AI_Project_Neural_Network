@@ -83,17 +83,46 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="svm.classify">
 <span class="sig-prename descclassname"><span class="pre">svm.</span></span><span class="sig-name descname"><span class="pre">classify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#svm.classify" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>This function performs classification on samples in model, which is svm.SVC (C-Support Vector Classification).
+After classification confusion matrix and classification report are printed.</p>
+<dl class="simple">
+<dt>Parametrs:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">model</dt>
+<dd class="field-odd"><p>data model –&gt; svm.SVC (C-Support Vector Classification)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="svm.createSvmClassifier">
+<span class="sig-prename descclassname"><span class="pre">svm.</span></span><span class="sig-name descname"><span class="pre">createSvmClassifier</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#svm.createSvmClassifier" title="Permalink to this definition"></a></dt>
+<dd><p>This functions creates C-Support Vector Classifier.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">svc</dt>
+<dd class="field-odd"><p>C-Support Vector Classifier fitted to training data</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="svm.getImportantData">
 <span class="sig-prename descclassname"><span class="pre">svm.</span></span><span class="sig-name descname"><span class="pre">getImportantData</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#svm.getImportantData" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="svm.svmClassifier">
-<span class="sig-prename descclassname"><span class="pre">svm.</span></span><span class="sig-name descname"><span class="pre">svmClassifier</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#svm.svmClassifier" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>This function creates svm.SVC (C-Support Vector Classification) and performs classification on samples in this model.
+It gets important names basing on their value of importance.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">importantData</dt>
+<dd class="field-odd"><p>array of texts containing only important words</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 

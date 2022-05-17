@@ -83,12 +83,87 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="metrics.permutationImportance">
 <span class="sig-prename descclassname"><span class="pre">metrics.</span></span><span class="sig-name descname"><span class="pre">permutationImportance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metrics.permutationImportance" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>This functions calculates permutation importance for provided model.</p>
+<p>Depending on using “takeXMostSignificantFeatures(impArray, namesArray, ss, numberOfFeatures=10)” or
+“takeAllFeatures(impArray, namesArray, ss)” the essential data will be returned from this function.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">model</dt>
+<dd class="field-odd"><p>data model, for example svc(C-Support Vector Classifier fitted to training data)</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">impArray</dt>
+<dd class="field-odd"><p>array containing the importance of each word</p>
+</dd>
+<dt class="field-even">namesArray</dt>
+<dd class="field-even"><p>array containing all words</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="metrics.plotImportant">
-<span class="sig-prename descclassname"><span class="pre">metrics.</span></span><span class="sig-name descname"><span class="pre">plotImportant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">importances</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metrics.plotImportant" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">metrics.</span></span><span class="sig-name descname"><span class="pre">plotImportant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">namesArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">impArray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metrics.plotImportant" title="Permalink to this definition"></a></dt>
+<dd><p>This functions creates a plot of importances of provided words.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">impArray</dt>
+<dd class="field-odd"><p>array to store value of importance of words</p>
+</dd>
+<dt class="field-even">namesArray</dt>
+<dd class="field-even"><p>array to store value of words</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="metrics.takeAllFeatures">
+<span class="sig-prename descclassname"><span class="pre">metrics.</span></span><span class="sig-name descname"><span class="pre">takeAllFeatures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">impArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namesArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sortedWords</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metrics.takeAllFeatures" title="Permalink to this definition"></a></dt>
+<dd><p>This functions takes all the important features.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">impArray</dt>
+<dd class="field-odd"><p>array to store value of importance of words</p>
+</dd>
+<dt class="field-even">namesArray</dt>
+<dd class="field-even"><p>array to store value of words</p>
+</dd>
+<dt class="field-odd">sortedWords</dt>
+<dd class="field-odd"><p>array with words sorted by the importance value</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="metrics.takeXMostSignificantFeatures">
+<span class="sig-prename descclassname"><span class="pre">metrics.</span></span><span class="sig-name descname"><span class="pre">takeXMostSignificantFeatures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">impArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namesArray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sortedWords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numberOfFeatures</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#metrics.takeXMostSignificantFeatures" title="Permalink to this definition"></a></dt>
+<dd><p>This functions takes numberOfFeatures from the beginning and numberOfFeatures from the end of the set of words.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">impArray</dt>
+<dd class="field-odd"><p>array to store value of importance of words</p>
+</dd>
+<dt class="field-even">namesArray</dt>
+<dd class="field-even"><p>array to store value of words</p>
+</dd>
+<dt class="field-odd">sortedWords</dt>
+<dd class="field-odd"><p>array with words sorted by the importance value</p>
+</dd>
+<dt class="field-even">numberOfFeatures</dt>
+<dd class="field-even"><p>integer value</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 

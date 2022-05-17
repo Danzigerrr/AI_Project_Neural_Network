@@ -81,32 +81,47 @@
   <section id="module-func">
 <span id="func-module"></span><h1>func module<a class="headerlink" href="#module-func" title="Permalink to this headline"></a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="func.get_data">
-<span class="sig-prename descclassname"><span class="pre">func.</span></span><span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#func.get_data" title="Permalink to this definition"></a></dt>
-<dd><p>This functions gets the data</p>
+<dt class="sig sig-object py" id="func.getFeatureNamesFromTFIDFVectorizer">
+<span class="sig-prename descclassname"><span class="pre">func.</span></span><span class="sig-name descname"><span class="pre">getFeatureNamesFromTFIDFVectorizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#func.getFeatureNamesFromTFIDFVectorizer" title="Permalink to this definition"></a></dt>
+<dd><p>This functions removes useless words from the text.</p>
+<p>Convert a collection of raw documents to a matrix of TF-IDF features.
+TF-IDF –&gt; TF – term frequency, IDF – inverse document frequency.
+It is a numerical statistic that is intended to reflect how important a word is to a document.</p>
 <dl class="simple">
-<dt>Parameters:</dt><dd><p>:none</p>
+<dt>Parameters:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">arr</dt>
+<dd class="field-odd"><p>An iterable which generates either str, unicode or file objects.</p>
+</dd>
+</dl>
 </dd>
 <dt>Returns:</dt><dd><dl class="field-list simple">
-<dt class="field-odd">v (int)</dt>
-<dd class="field-odd"><p>matrix</p>
+<dt class="field-odd">featureNames</dt>
+<dd class="field-odd"><p>feature names from vectorizer_dt got from texts basing on TF-IDF method</p>
 </dd>
-<dt class="field-even">labels</dt>
-<dd class="field-even"><p>whatever</p>
+<dt class="field-even">vectorizer_dt</dt>
+<dd class="field-even"><p>text array transformed to document-term matrix</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="func.get_data">
+<span class="sig-prename descclassname"><span class="pre">func.</span></span><span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#func.get_data" title="Permalink to this definition"></a></dt>
+<dd><p>This functions gets the data.</p>
+<dl class="simple">
+<dt>Returns</dt><dd><dl class="field-list simple">
+<dt class="field-odd">vectorizer_dt</dt>
+<dd class="field-odd"><p>TF-IDF is a numerical statistic that is intended to reflect how important a word is to a document</p>
+</dd>
+<dt class="field-even">labels save</dt>
+<dd class="field-even"><p>info about isAntiVaccine</p>
 </dd>
 <dt class="field-odd">featureNames</dt>
-<dd class="field-odd"><p>feature names from vectorizer</p>
+<dd class="field-odd"><p>feature names from vectorizer_dt got from texts basing on TF-IDF method</p>
 </dd>
 </dl>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>etype</strong> – exception type</p></li>
-<li><p><strong>value</strong> – exception value</p></li>
-<li><p><strong>tb</strong> – traceback object</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -114,7 +129,46 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="func.get_important">
 <span class="sig-prename descclassname"><span class="pre">func.</span></span><span class="sig-name descname"><span class="pre">get_important</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vocab</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#func.get_important" title="Permalink to this definition"></a></dt>
-<dd><p>Function that transforms vocab into vector space</p>
+<dd><p>This function gets only important words from the texts.
+The important words(vocab) are searched in the texts.
+The words are saved to the ‘temp’ array only if they exist in the provided data(texts).</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">vocab</dt>
+<dd class="field-odd"><p>A list of important words (returned from permutationImportance() function)</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">vectorizer_dt</dt>
+<dd class="field-odd"><p>text array transformed to document-term matrix</p>
+</dd>
+<dt class="field-even">featureNames</dt>
+<dd class="field-even"><p>feature names from vectorizer_dt got from texts basing on TF-IDF method</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="func.removeUnnededWords">
+<span class="sig-prename descclassname"><span class="pre">func.</span></span><span class="sig-name descname"><span class="pre">removeUnnededWords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#func.removeUnnededWords" title="Permalink to this definition"></a></dt>
+<dd><p>This functions removes useless words from the text.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">text</dt>
+<dd class="field-odd"><p>a text to analyze</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">converted_text</dt>
+<dd class="field-odd"><p>converted text</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 </section>

@@ -2,10 +2,8 @@ import json
 import nltk
 import pandas
 from blacklist import blacklist, ignored_tokens, tag_list
-from mappings import word_map
 from sklearn.feature_extraction.text import TfidfVectorizer
-import numpy as np
-from collections import Counter
+from mappings import word_map
 
 with open("s.json", encoding="utf-8") as file:
     data = json.load(file)
@@ -14,55 +12,95 @@ num_of_text = len(data)  # liczba analizowanych tekstów
 
 def get_data():
     """
-    This functions gets the data
+    This functions gets the data.
+
+    Returns
+        :vectorizer_dt: TF-IDF is a numerical statistic that is intended to reflect how important a word is to a document
+        :labels save: info about isAntiVaccine
+        :featureNames: feature names from vectorizer_dt got from texts basing on TF-IDF method
+    """
+
+    arr = [] # array to save texts
+    labels = [] # to save info about if text is isAntiVaccine or not
+    for i in range(0, num_of_text):
+        text = data[i]["text"]
+        labels.append(data[i]["isAntiVaccine"])
+        clearText = removeUnnededWords(text)
+        arr.append(clearText)
+
+    featureNames, vectorizer_dt = getFeatureNamesFromTFIDFVectorizer(arr)
+    return vectorizer_dt, labels, featureNames
+
+
+def removeUnnededWords(text):
+    """
+    This functions removes useless words from the text.
 
     Parameters:
-        :none
+        :text: a text to analyze
 
     Returns:
-        :v (int): matrix
-        :labels: whatever
-        :featureNames: feature names from vectorizer
-
-    :param etype: exception type
-    :param value: exception value
-    :param tb: traceback object
-
-
-    pobiera z pliku
+        :converted_text: converted text
     """
-    vectorizer = TfidfVectorizer(stop_words='english', min_df=0.035)  # obiekt do liczenia slow
-    arr = []  # tabela z tekstami
-    labels = []
-    for i in range(0, num_of_text):
-        labels.append(data[i]["isAntiVaccine"])
-        st = data[i]["text"]
-        st = st.lower()
-        for j in ignored_tokens:
-            st = st.replace(j, " ")
-        tokens = nltk.word_tokenize(st)
-        tags = nltk.pos_tag(tokens)
-        for (word, tag) in tags:
-            if tag in tag_list:
-                tokens.remove(word)
-        for (w, m) in word_map.items():
-            tokens = list(map(lambda it: it.replace(w,m), tokens))
+    text = text.lower()
+    # put a blank space in place of ignored symbols
+    for j in ignored_tokens:
+        text = text.replace(j, " ")
+    # tokenize text, remove unneeded data basing on tokens
+    tokenized_text = nltk.word_tokenize(text)
+    tags = nltk.pos_tag(tokenized_text)
+    for (word, tag) in tags:
+        if tag in tag_list:
+            tokenized_text.remove(word)
+    # handle pairs of words ending with "s" and without it
+    for (w, m) in word_map.items():
+        tokenized_text = list(map(lambda it: it.replace(w, m), tokenized_text))
+    # remove words from text included in blacklist
+    converted_text = ' '.join(filter(lambda x: blacklist.count(x) == 0, tokenized_text))
+    return converted_text
 
-        st = ' '.join(filter(lambda x: blacklist.count(x) == 0, tokens))
-        arr.append(st)
-    vectorizer.fit(arr)  # wrzuecnie do obiektu zeby zaczla liczyc
-    v = vectorizer.transform(arr)  # zamiana na macierz
-    print(vectorizer.vocabulary_)
+
+def getFeatureNamesFromTFIDFVectorizer(arr):
+    """
+    This functions removes useless words from the text.
+
+    Convert a collection of raw documents to a matrix of TF-IDF features.
+    TF-IDF --> TF – term frequency, IDF – inverse document frequency.
+    It is a numerical statistic that is intended to reflect how important a word is to a document.
+
+    Parameters:
+        :arr: An iterable which generates either str, unicode or file objects.
+
+    Returns:
+        :featureNames: feature names from vectorizer_dt got from texts basing on TF-IDF method
+        :vectorizer_dt: text array transformed to document-term matrix
+
+    """
+    # min_df --> Terms that were ignored because they occurred in too few documents
+    vectorizer = TfidfVectorizer(stop_words='english', min_df=0.035)
+    vectorizer.fit(arr)  # Learn vocabulary and idf from training set.
+    vectorizer_dt = vectorizer.transform(arr)  # Transform documents to document-term matrix
+    # print(vectorizer.vocabulary_)
     featureNames = vectorizer.get_feature_names()
-    return v, labels, featureNames
+    return featureNames, vectorizer_dt
 
 
 def get_important(vocab):
+    """
+    This function gets only important words from the texts.
+    The important words(vocab) are searched in the texts.
+    The words are saved to the 'temp' array only if they exist in the provided data(texts).
+
+    Parameters:
+        :vocab: A list of important words (returned from permutationImportance() function)
+
+    Returns:
+        :vectorizer_dt: text array transformed to document-term matrix
+        :featureNames: feature names from vectorizer_dt got from texts basing on TF-IDF method
+    """
+
     #genreownaie nowej prestrezni wekt. ksladajacej sie tlyko z istonych slow
     # iteruje przez jesli pasuja to wrzuca je, a jesli nie ma ich w "vocav" to je pomija
-
-    """Function that transforms vocab into vector space"""
-    vectorizer = TfidfVectorizer()  # obiekt do liczenia slow
     arr = []  # tabela z tekstami
     for i in range(0, num_of_text):
         temp = []
@@ -74,11 +112,15 @@ def get_important(vocab):
                 temp.append(word)
         st = ' '.join(temp)
         arr.append(st)
-    vectorizer.fit(arr)  # wrzuecnie do obiektu zeby zaczla liczyc
-    v = vectorizer.transform(arr)  # zamiana na macierz
-    print(vectorizer.vocabulary_)
-    print(len(vocab))
-    print(len(vectorizer.vocabulary_))
-    df = pandas.DataFrame(data=v.toarray(), columns=vectorizer.get_feature_names())
-    print(df)
-    return v, vectorizer.get_feature_names()
+    vectorizer = TfidfVectorizer()
+    vectorizer.fit(arr)  # Learn vocabulary and idf from training set.
+    vectorizer_dt = vectorizer.transform(arr)  # Transform documents to document-term matrix
+    featureNames = vectorizer.get_feature_names()
+    # print(vectorizer.vocabulary_)
+    # print(len(vocab))
+    # print(len(vectorizer.vocabulary_))
+
+    # TODO --> df mozna usunąć, bo nie jest używane
+    df = pandas.DataFrame(data=vectorizer_dt.toarray(), columns=featureNames)
+    # print(df)
+    return vectorizer_dt, featureNames

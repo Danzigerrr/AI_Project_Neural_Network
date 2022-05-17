@@ -1,1 +1,1 @@
-word_map = {"vaccines":"vaccine", "cells":"cell", "risks":"risk"}
+word_map = {"vaccines": "vaccine", "cells": "cell", "risks": "risk"}
