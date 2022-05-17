@@ -1,0 +1,7 @@
+blacklist module
+================
+
+.. automodule:: blacklist
+   :members:
+   :undoc-members:
+   :show-inheritance:
