@@ -36,7 +36,7 @@ def permutationImportance(model):
     impArray = []
     sortedWords = sorted(importances, key=lambda x: x.importance)
     
-    # takeXMostSignificantFeatures(impArray, namesArray, ss, numberOfFeatures=10)
+    # takeXMostSignificantFeatures(impArray, namesArray, sortedWords, numberOfFeatures=10)
     # or:
     takeAllFeatures(impArray, namesArray, sortedWords)
 
@@ -53,6 +53,7 @@ def takeAllFeatures(impArray, namesArray, sortedWords):
         :sortedWords: array with words sorted by the importance value  
     """
     for i in sortedWords:
+        # value of sys.float_info.epsilon = 2.220446049250313e-16
         if i.importance > sys.float_info.epsilon or i.importance < -sys.float_info.epsilon:
             namesArray.append(i.name)
             impArray.append(i.importance)
@@ -88,10 +89,13 @@ def plotImportant(namesArray, impArray):
         :impArray: array to store value of importance of words
         :namesArray: array to store value of words
     """
+    plt.rc('font', size=12)
     _, ax = plt.subplots()
     y_size = np.arange(len(namesArray))
     ax.barh(y_size, impArray)
     ax.set_yticks(y_size, labels=namesArray)
     ax.invert_yaxis()
     ax.set_xlabel("Importance")
+
+    plt.savefig("SavedVisualisation/20wordsImpFF.png")
     plt.show()

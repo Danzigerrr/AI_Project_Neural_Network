@@ -25,10 +25,10 @@ def classify(model):
     This function performs classification on samples in model, which is svm.SVC (C-Support Vector Classification).
     After classification confusion matrix and classification report are printed.
 
-    Parametrs:
+    Parameters:
         :model: data model --> svm.SVC (C-Support Vector Classification)
     """
-    y_pred = model.predict(X_test)
+    y_pred = model.predict(X_test)  # Perform classification on samples in X_test
     print(confusion_matrix(y_test, y_pred))
     print(classification_report(y_test, y_pred))
 
@@ -42,13 +42,13 @@ def getImportantData():
         :importantData: array of texts containing only important words
     """
     svc = createSvmClassifier()
-    _, snames = permutationImportance(svc)
-    importantData, _ = get_important(snames)
+    _, snames = permutationImportance(svc) # get only words
+    importantData, _ = get_important(snames) # get vectorizer_dt (documenent transformed into document-term matrix)
     return importantData
 
 
 if __name__ == "__main__":
     svc = createSvmClassifier()
     simp, snames = permutationImportance(svc)
-    classify(svc)
     plotImportant(snames, simp)
+    classify(svc)

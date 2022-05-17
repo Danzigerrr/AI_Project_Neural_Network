@@ -12,7 +12,7 @@ num_of_text = len(data)  # liczba analizowanych tekstów
 
 def get_data():
     """
-    This functions gets the data.
+    This functions imports the data basing on json file.
 
     Returns
         :vectorizer_dt: TF-IDF is a numerical statistic that is intended to reflect how important a word is to a document
