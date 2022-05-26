@@ -30,9 +30,22 @@ release = '1.0'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-    'sphinx.ext.autodoc'
-]
+
+# extensions = [
+#     'sphinx.ext.autodoc'
+# ]
+
+extensions = ['rst2pdf.pdfbuilder']
+pdf_documents = [('index', u'PDF documentation', u'AI_Project_Neural_Network', u'Bogna Lew, Bartosz Strzelecki, Krzysztof Nazar'),]
+# index - master document
+# rst2pdf - name of the generated pdf
+# Sample rst2pdf doc - title of the pdf
+# Your Name - author name in the pdf
+
+#
+# extensions = ['rst2pdf.pdfbuilder']
+# pdf_documents = [('index', u'rst2pdf', u'Sample rst2pdf doc', u'Your Name'),]
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

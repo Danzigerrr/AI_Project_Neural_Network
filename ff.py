@@ -72,7 +72,6 @@ def keras_shap(model):
     Parameters
          :model: trained neural network model
     """
-    # TODO change the legend visualisation
     exp = shap.DeepExplainer(model, X_train)
     shapVal = exp.shap_values(X_train)
     # -----
@@ -127,6 +126,8 @@ def keras_permutations(inputData):
     imp, names = permutationImportance(model)
     print(names)
     plotImportant(names, imp)
+    y_pred = model.predict(X_test)  # Perform classification on samples in X_test
+    print(classification_report(y_test, y_pred))
 
 
 if __name__ == "__main__":

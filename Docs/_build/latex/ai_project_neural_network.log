@@ -1,0 +1,24 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.5.24)  24 MAY 2022 19:04
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./ai_project_neural_network.pdf
+(ai_project_neural_network.pdf
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>)
+*
+! Emergency stop.
+<*> 
+    
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 18 strings out of 478582
+ 626 string characters out of 2844344
+ 288951 words of memory out of 3000000
+ 18305 multiletter control sequences out of 15000+600000
+ 469259 words of font info for 28 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 13i,0n,12p,63b,10s stack positions out of 10000i,1000n,20000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!
