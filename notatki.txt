@@ -32,6 +32,27 @@ odifotrwac te ktore są nieskie, a potem narysowc mape --> wtedy mapa bedzie bar
 
 
 
+----- Notatki ze sprawozdania na google docs -----
+
+
+
+===== notatki =====
+pierwszy krok w projekcie:
+sklasyfikować teksty
+stworzyć model przestrzeni wektorowej - vector space model
+podać model na wejście do SOM kohonena
+
+ze wstepu:
+To badanie polega na analizie poglądów ludzi należących do dwóch spolaryzowanych grup odnoszących się do zagadnienia szczepień. Zebrane zostały teksty opisujące czy oraz dlaczego warto wykonywać szczepienia. Teksty zostały podzielone na dwie przeciwne klasy. Każdemu z tekstów został przypisany odpowiedni znacznik w zależności od tego czy autor tekstu wspiera lub jest przeciwny szczepieniom. 
+
+Po zebraniu tekstów stworzono model przestrzeni wektorowej nad analizowanym zbiorem tekstów. Następnie analizujemy ich siatkę pojęciową zbudowaną na podstawie analizy tekstów. Patrzymy jak słowa w obrębie tych dwóch klasach tekstów wiążą się ze sobą. Następnie wizualizujemy to używając samoorganizującej sieci neuronowej - sieci Kohonena.
+
+Następnie zobaczymy jak bardzo oraz w jaki sposób możemy modyfikować tą siatkę w zależności od dodawania nowych danych. Można zmienić jej algorytm uczący i sprawdzimy jaki wpływ będzie to miało na organizację danych. 
+
+Może być użytych kilka metod analizy tekstów (będzie omówione potem).
+
+
+
 
 
 
