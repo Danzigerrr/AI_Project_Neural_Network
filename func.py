@@ -4,10 +4,15 @@ import gensim
 from gensim.models import Word2Vec
 import nltk
 import nltk.data
+from nltk.lm import Vocabulary
 import pandas
 from blacklist import blacklist, ignored_tokens, tag_list
 from sklearn.feature_extraction.text import TfidfVectorizer
 from mappings import word_map
+import numpy as np
+
+
+whitelist = ["safe", "cells", "children", "body", "risk", "parents", "reasons", "protection", "effects", "adults", "rare", "vaccinations", "immunity", "usually", "study", "covid", "cell", "risks", "ill", "lives", "disease", "people", "site", "infection", "polio", "fact", "religious", "old", "doctors", "deaths", "experimental", "cdc", "past", "kids", "lower", "care", "shot", "rapidly", "research"]
 
 with open("s.json", encoding="utf-8") as file:
     data = json.load(file)
@@ -35,9 +40,67 @@ def get_data():
     featureNames, vectorizer_dt = getFeatureNamesFromTFIDFVectorizer(arr)
     return vectorizer_dt, labels, featureNames
 
+def get_word_embeddings2():
+    t_for = []
+    t_against = []
+    t_both = []
+    tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
+    vocab = Vocabulary(unk_cutoff = 5)
+    for i in range(num_of_text):
+        text = data[i]["text"]
+        text = tokenizer.tokenize(text)
+        for j in text:
+            d = []
+            for k in nltk.word_tokenize(j):
+                d.append(k.lower())
+            if data[i]["isAntiVaccine"] == 0:
+                t_for.append(d)
+            else:
+                t_against.append(d)
+            t_both.append(d)
+            vocab.update(d)
+    v = []
+    for i in vocab:
+        if i not in ignored_tokens and i not in blacklist:
+            v.append(i)
+    m = np.zeros((len(whitelist) * 2, len(v)))
+    labels = []
+    names = []
+    for i in whitelist:
+        labels.append(0)
+        names.append(i)
+    for i in whitelist:
+        labels.append(1)
+        names.append(i)
+    for i in t_for:
+        for j in range(len(i)):
+            if i[j] in whitelist:
+                score = 7
+                for k in range(1, 7):
+                    if j - k >= 0 and i[j - k] in v:
+                        m[whitelist.index(i[j]), v.index(i[j - k])] += score
+                    if j + k < len(i) and i[j + k] in v:
+                        m[whitelist.index(i[j]), v.index(i[j + k])] += score
+                    score -= 1
+
+    for i in t_against:
+        for j in range(len(i)):
+            if i[j] in whitelist:
+                score = 7
+                for k in range(1, 7):
+                    if j - k >= 0 and i[j - k] in v:
+                        m[whitelist.index(i[j]) + len(whitelist), v.index(i[j - k])] += score
+                    if j + k < len(i) and i[j + k] in v:
+                        m[whitelist.index(i[j]) + len(whitelist), v.index(i[j + k])] += score
+                    score -= 1
+
+    return m, labels, names
+
+
 def get_word_embeddings():
     t_for = []
     t_against = []
+    t_both = []
     tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
     for i in range(num_of_text):
         text = data[i]["text"]
@@ -50,16 +113,23 @@ def get_word_embeddings():
                 t_for.append(d)
             else:
                 t_against.append(d)
-    model_for = gensim.models.Word2Vec(t_for, vector_size = 500)
-    model_against = gensim.models.Word2Vec(t_against, vector_size = 500)
+            t_both.append(d)
+    model_for = gensim.models.Word2Vec(t_for, vector_size = 500, window=3)
+    model_against = gensim.models.Word2Vec(t_against, vector_size = 500, window=3)
+    model_both = gensim.models.Word2Vec(t_both, vector_size = 500, window=3)
     v_for = model_for.wv.key_to_index
     v_against = model_against.wv.key_to_index
     v_for = {x: v_for[x] for x in v_for.keys() if x in v_against.keys()}
     v_against = {x: v_against[x] for x in v_against.keys() if x in v_for.keys()}
+    v_both = model_both.wv.key_to_index
+    v_both = {x: v_both[x] for x in v_both.keys() if x in v_against.keys()}
 
     output = []
     labels = []
     featureNames = []
+    o_data = []
+    for key, index in v_both.items():
+        o_data.append(model_both.wv[index])
     for key, index in v_for.items():
         output.append(model_for.wv[index])
         labels.append(0)
@@ -70,7 +140,7 @@ def get_word_embeddings():
         labels.append(1)
         featureNames.append(key)
     print(featureNames)
-    return output, labels, featureNames
+    return o_data, output, labels, featureNames
 
 def removeUnnededWords(text):
     """
