@@ -1,5 +1,9 @@
 import json
+from pandas._libs.tslibs.period import validate_end_alias
+import gensim
+from gensim.models import Word2Vec
 import nltk
+import nltk.data
 import pandas
 from blacklist import blacklist, ignored_tokens, tag_list
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -31,6 +35,42 @@ def get_data():
     featureNames, vectorizer_dt = getFeatureNamesFromTFIDFVectorizer(arr)
     return vectorizer_dt, labels, featureNames
 
+def get_word_embeddings():
+    t_for = []
+    t_against = []
+    tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
+    for i in range(num_of_text):
+        text = data[i]["text"]
+        text = tokenizer.tokenize(text)
+        for j in text:
+            d = []
+            for k in nltk.word_tokenize(j):
+                d.append(k.lower())
+            if data[i]["isAntiVaccine"] == 0:
+                t_for.append(d)
+            else:
+                t_against.append(d)
+    model_for = gensim.models.Word2Vec(t_for, vector_size = 500)
+    model_against = gensim.models.Word2Vec(t_against, vector_size = 500)
+    v_for = model_for.wv.key_to_index
+    v_against = model_against.wv.key_to_index
+    v_for = {x: v_for[x] for x in v_for.keys() if x in v_against.keys()}
+    v_against = {x: v_against[x] for x in v_against.keys() if x in v_for.keys()}
+
+    output = []
+    labels = []
+    featureNames = []
+    for key, index in v_for.items():
+        output.append(model_for.wv[index])
+        labels.append(0)
+        featureNames.append(key)
+
+    for key, index in v_for.items():
+        output.append(model_against.wv[index])
+        labels.append(1)
+        featureNames.append(key)
+    print(featureNames)
+    return output, labels, featureNames
 
 def removeUnnededWords(text):
     """
