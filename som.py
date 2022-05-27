@@ -19,11 +19,11 @@ def som(data):
         :featureNames: feature names from vectorizer_dt got from texts basing on TF-IDF method
     """
 
-    som_size = 15
-    som = MiniSom(som_size, som_size, data.shape[1], sigma=5, learning_rate=0.1,
+    som_size = 5
+    som = MiniSom(som_size, som_size, data.shape[1], sigma=3, learning_rate=0.1,
                   neighborhood_function='triangle', random_seed=10)
     som.pca_weights_init(data)
-    som.train_random(data, 500, verbose=True)
+    som.train_random(data, 5000, verbose=True)
     return som
 
 def somWithClassInfo(data):
