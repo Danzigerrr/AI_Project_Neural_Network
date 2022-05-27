@@ -1,5 +1,5 @@
 from minisom import MiniSom #https://github.com/JustGlowing/minisom
-from matplotlib.pylab import bone, pcolor, colorbar, plot, show, legend
+from matplotlib.pylab import bone, pcolor, colorbar, plot, show, legend, text
 from variables import labels, data, names
 import random
 import copy
@@ -19,11 +19,11 @@ def som(data):
         :featureNames: feature names from vectorizer_dt got from texts basing on TF-IDF method
     """
 
-    som_size = 15
-    som = MiniSom(som_size, som_size, data.shape[1], sigma=5, learning_rate=0.1,
+    som_size = 5
+    som = MiniSom(som_size, som_size, data.shape[1], sigma=3, learning_rate=0.1,
                   neighborhood_function='triangle', random_seed=10)
     som.pca_weights_init(data)
-    som.train_random(data, 500, verbose=True)
+    som.train_random(data, 5000, verbose=True)
     return som
 
 def somWithClassInfo(data):
@@ -44,10 +44,10 @@ def somWithClassInfo(data):
 
     model = som(df.values)
 
-    plotSom(model, df.to_numpy())
+    plotSom(model, df.to_numpy(), labels)
     return model
 
-def plotSom(som, data):
+def plotSom(som, data, labels, featureNames = None):
     """
     This function is used to plot som. Colors, sizes and data can be set here.
 
@@ -60,15 +60,19 @@ def plotSom(som, data):
     colorbar()
     colors = ['r', 'g']
     for i, x in enumerate(data):
+        ox = random.random()
+        oy = random.random()
         print("i: " + str(i) + "x: " + str(x))
         w = som.winner(x)
-        plot(w[0] + random.random(),
-            w[1] + random.random(),
+        plot(w[0] + ox,
+            w[1] + oy,
             'o',
             markeredgecolor=colors[labels[i]],
             markerfacecolor = colors[labels[i]],
             markersize=6,
             markeredgewidth=2)
+        if featureNames is not None:
+            text(w[0]+ox, w[1]+oy, featureNames[i], c=colors[labels[i]])
     show()
 
 if __name__ == "__main__":

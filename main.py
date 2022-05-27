@@ -1,6 +1,8 @@
 from som import som, plotSom
-from ff import keras
-from svm import getImportantData
+# from ff import keras
+# from svm import getImportantData
+from func import get_word_embeddings2
+import numpy as np
 
 
 """
@@ -8,8 +10,8 @@ from svm import getImportantData
 """
 
 if __name__ == "__main__":
-    data = getImportantData()
-    somModel = som(data.toarray())
-    plotSom(somModel, data.toarray())
+    data, labels, names = get_word_embeddings2()
+    somModel = som(data)
+    plotSom(somModel, data, labels, names)
     # keras(data)
 
