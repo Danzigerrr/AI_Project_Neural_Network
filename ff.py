@@ -62,7 +62,7 @@ def keras(inputData):
     model.fit(X_train, y_train, batch_size=2, epochs=300, verbose='auto', shuffle=True, class_weight={0: 0.3, 1: 0.7},
               initial_epoch=0)
 
-    return model
+    return model,  X_train, y_train, X_test, y_test
 
 
 def keras_shap(model):
@@ -90,7 +90,7 @@ def keras_shap(model):
     plt.savefig("SavedVisualisation/FF_plot_20words.png")
     plt.show()
 
-def keras_classify(model):
+def keras_classify(model, X_train, y_train, X_test, y_test):
     """
     This functions prints two classification reports:
         - for training data.
@@ -131,9 +131,9 @@ def keras_permutations(inputData):
 
 
 if __name__ == "__main__":
-    model = keras(data)
+    model,  X_train, y_train, X_test, y_test = keras(data)
 
     keras_shap(model)
-    keras_classify(model)
+    keras_classify(model,  X_train, y_train, X_test, y_test)
 
     keras_permutations(data)

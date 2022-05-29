@@ -8,19 +8,19 @@ from func import get_important
 from metrics import permutationImportance, plotImportant
 
 
-def createSvmClassifier():
+def createSvmClassifier(X_train, y_train):
     """
     This functions creates C-Support Vector Classifier.
 
     Returns:
         :svc: C-Support Vector Classifier fitted to training data
     """
-    svc = svm.SVC(kernel='linear', verbose=True)  # C-Support Vector Classification.
+    svc = svm.SVC(kernel='linear', verbose=True, max_iter=300)  # C-Support Vector Classification.
     svc.fit(X_train, y_train)  # Fit the SVM model according to the given training data
     return svc
 
 
-def classify(model):
+def classify(model, X_train, y_train, X_test, y_test):
     """
     This function performs classification on samples in model, which is svm.SVC (C-Support Vector Classification).
     After classification confusion matrix and classification report are printed.
@@ -28,7 +28,12 @@ def classify(model):
     Parameters:
         :model: data model --> svm.SVC (C-Support Vector Classification)
     """
+    y_pred = model.predict(X_train)  # Perform classification on samples in X_test
+    print("---------- Evaluation on Train Data SVM ----------")
+    print(confusion_matrix(y_train, y_pred))
+    print(classification_report(y_train, y_pred))
     y_pred = model.predict(X_test)  # Perform classification on samples in X_test
+    print("---------- Evaluation on Test Data SVM ----------")
     print(confusion_matrix(y_test, y_pred))
     print(classification_report(y_test, y_pred))
 
@@ -41,14 +46,14 @@ def getImportantData():
     Returns:
         :importantData: array of texts containing only important words
     """
-    svc = createSvmClassifier()
+    svc = createSvmClassifier(X_train, y_train)
     _, snames = permutationImportance(svc) # get only words
     importantData, _ = get_important(snames) # get vectorizer_dt (documenent transformed into document-term matrix)
     return importantData
 
 
 if __name__ == "__main__":
-    svc = createSvmClassifier()
+    svc = createSvmClassifier(X_train, y_train)
     simp, snames = permutationImportance(svc)
     plotImportant(snames, simp)
-    classify(svc)
+    classify(svc, X_train, y_train, X_test, y_test)

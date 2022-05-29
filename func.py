@@ -34,7 +34,7 @@ def get_data():
     for i in range(0, num_of_text):
         text = data[i]["text"]
         labels.append(data[i]["isAntiVaccine"])
-        clearText = removeUnnededWords(text)
+        clearText = removeUnnededWords(text, tag_list)
         arr.append(clearText)
 
     featureNames, vectorizer_dt = getFeatureNamesFromTFIDFVectorizer(arr)
@@ -142,7 +142,7 @@ def get_word_embeddings():
     print(featureNames)
     return o_data, output, labels, featureNames
 
-def removeUnnededWords(text):
+def removeUnnededWords(text, skipped_tags):
     """
     This functions removes useless words from the text.
 
@@ -160,7 +160,7 @@ def removeUnnededWords(text):
     tokenized_text = nltk.word_tokenize(text)
     tags = nltk.pos_tag(tokenized_text)
     for (word, tag) in tags:
-        if tag in tag_list:
+        if tag in skipped_tags:
             tokenized_text.remove(word)
     # handle pairs of words ending with "s" and without it
     for (w, m) in word_map.items():
