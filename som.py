@@ -6,7 +6,7 @@ import copy
 import numpy as np
 import pandas as pd
 
-def som(data):
+def som(data, learning_rate=.1):
     """
     This functions creates and trains SOM basing on provided data.
 
@@ -20,10 +20,10 @@ def som(data):
     """
 
     som_size = 5
-    som = MiniSom(som_size, som_size, data.shape[1], sigma=3, learning_rate=0.1,
+    som = MiniSom(som_size, som_size, data.shape[1], sigma=10, learning_rate=learning_rate,
                   neighborhood_function='triangle', random_seed=10)
     som.pca_weights_init(data)
-    som.train_random(data, 5000, verbose=True)
+    som.train_random(data, 500, verbose=True)
     return som
 
 def somWithClassInfo(data):
@@ -62,7 +62,6 @@ def plotSom(som, data, labels, featureNames = None):
     for i, x in enumerate(data):
         ox = random.random()
         oy = random.random()
-        print("i: " + str(i) + "x: " + str(x))
         w = som.winner(x)
         plot(w[0] + ox,
             w[1] + oy,

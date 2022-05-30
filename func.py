@@ -1,4 +1,5 @@
 import json
+import random
 from pandas._libs.tslibs.period import validate_end_alias
 import gensim
 from gensim.models import Word2Vec
@@ -40,12 +41,14 @@ def get_data():
     featureNames, vectorizer_dt = getFeatureNamesFromTFIDFVectorizer(arr)
     return vectorizer_dt, labels, featureNames
 
-def get_word_embeddings2():
+def get_word_embeddings2(cutoff = 1.0):
+    data = json.load(open("s.json", encoding="utf-8"))
     t_for = []
     t_against = []
     t_both = []
     tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
     vocab = Vocabulary(unk_cutoff = 5)
+    random.shuffle(data)
     for i in range(num_of_text):
         text = data[i]["text"]
         text = tokenizer.tokenize(text)
@@ -59,6 +62,8 @@ def get_word_embeddings2():
                 t_against.append(d)
             t_both.append(d)
             vocab.update(d)
+    t_for = t_for[0:int(len(t_for)*cutoff)]
+    t_against = t_against[0:int(len(t_against)*cutoff)]
     v = []
     for i in vocab:
         if i not in ignored_tokens and i not in blacklist:
@@ -96,6 +101,7 @@ def get_word_embeddings2():
 
     return m, labels, names
 
+get_word_embeddings2()
 
 def get_word_embeddings():
     t_for = []
