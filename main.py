@@ -1,7 +1,7 @@
 from som import som, plotSom
 # from ff import keras
 # from svm import getImportantData
-from func import get_word_embeddings2
+from func import get_word_embeddings2, get_word_embeddings
 import numpy as np
 
 
@@ -10,21 +10,21 @@ import numpy as np
 """
 
 if __name__ == "__main__":
-    data, labels, names = get_word_embeddings2(.8)
-    data2, labels, names = get_word_embeddings2()
-    d = data2 - data
+    _, data, labels, names = get_word_embeddings(.0, .8)
+    _, data2, labels, names = get_word_embeddings(.8, 1.0)
+    _, data3, labels, names = get_word_embeddings()
     sommodel = som(data)
     plotSom(sommodel, data, labels, names)
-    sommodel.train_random(d, 50)
-    plotSom(sommodel, data2, labels, names)
+    sommodel.train_random(data2, 50)
+    plotSom(sommodel, data3, labels, names)
     # keras(data)
 
     sommodel = som(data, .01)
     plotSom(sommodel, data, labels, names)
-    sommodel.train_random(d, 50)
-    plotSom(sommodel, data2, labels, names)
+    sommodel.train_random(data2, 50)
+    plotSom(sommodel, data3, labels, names)
 
     sommodel = som(data, .001)
     plotSom(sommodel, data, labels, names)
-    sommodel.train_random(d, 50)
-    plotSom(sommodel, data2, labels, names)
+    sommodel.train_random(data2, 50)
+    plotSom(sommodel, data3, labels, names)

@@ -48,7 +48,6 @@ def get_word_embeddings2(cutoff = 1.0):
     t_both = []
     tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
     vocab = Vocabulary(unk_cutoff = 5)
-    random.shuffle(data)
     for i in range(num_of_text):
         text = data[i]["text"]
         text = tokenizer.tokenize(text)
@@ -101,9 +100,8 @@ def get_word_embeddings2(cutoff = 1.0):
 
     return m, labels, names
 
-get_word_embeddings2()
 
-def get_word_embeddings():
+def get_word_embeddings(left = 0.0, right = 1.0):
     t_for = []
     t_against = []
     t_both = []
@@ -120,9 +118,11 @@ def get_word_embeddings():
             else:
                 t_against.append(d)
             t_both.append(d)
-    model_for = gensim.models.Word2Vec(t_for, vector_size = 500, window=3)
-    model_against = gensim.models.Word2Vec(t_against, vector_size = 500, window=3)
-    model_both = gensim.models.Word2Vec(t_both, vector_size = 500, window=3)
+    t_for = t_for[int(len(t_for)*left):int(len(t_for)*right)]
+    t_against = t_against[int(len(t_against)*left):int(len(t_against)*right)]
+    model_for = gensim.models.Word2Vec(t_for, vector_size = 500, min_count = 1)
+    model_against = gensim.models.Word2Vec(t_against, vector_size = 500, min_count = 1)
+    model_both = gensim.models.Word2Vec(t_both, vector_size = 500, min_count = 1)
     v_for = model_for.wv.key_to_index
     v_against = model_against.wv.key_to_index
     v_for = {x: v_for[x] for x in v_for.keys() if x in v_against.keys()}
@@ -135,18 +135,21 @@ def get_word_embeddings():
     featureNames = []
     o_data = []
     for key, index in v_both.items():
-        o_data.append(model_both.wv[index])
+        if key in whitelist:
+            o_data.append(model_both.wv[index])
     for key, index in v_for.items():
-        output.append(model_for.wv[index])
-        labels.append(0)
-        featureNames.append(key)
+        if key in whitelist:
+            output.append(model_for.wv[index])
+            labels.append(0)
+            featureNames.append(key)
 
     for key, index in v_for.items():
-        output.append(model_against.wv[index])
-        labels.append(1)
-        featureNames.append(key)
+        if key in whitelist:
+            output.append(model_against.wv[index])
+            labels.append(1)
+            featureNames.append(key)
     print(featureNames)
-    return o_data, output, labels, featureNames
+    return o_data, np.array(output), labels, featureNames
 
 def removeUnnededWords(text):
     """
