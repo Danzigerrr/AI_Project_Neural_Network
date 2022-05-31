@@ -15,7 +15,7 @@ def saveDistanceInfoToExcelFile(distances):
     worksheet = workbook.add_worksheet()
 
     # write column names
-    columnNames = ["LearningRate", "sumFor", "avgFor", "sumAgainst", "avgAgainst"]
+    columnNames = ["DataType", "LearningRate", "sumFor", "avgFor", "sumAgainst", "avgAgainst"]
     for iter in range(len(columnNames)):
         worksheet.write(0, iter, columnNames[iter])
 
@@ -35,12 +35,16 @@ def saveDistanceInfoToExcelFile(distances):
         distances.insert(rowIter, newRow)
 
     # save the distance Data into file
+    dataTypes = ["Before", "After", "Difference"]
     row = 1
     cols = 5
+    typeIter = 0
     for data in distances[:-1]:  # last row is filled with zeros
-        for i in range(cols):
+        worksheet.write(row, 0, dataTypes[typeIter % len(dataTypes)])
+        for i in range(1,cols):
             worksheet.write(row, i, data[i])
         row += 1
+        typeIter += 1
 
     workbook.close()
 
