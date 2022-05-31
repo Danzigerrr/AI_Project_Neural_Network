@@ -1,10 +1,12 @@
-from minisom import MiniSom #https://github.com/JustGlowing/minisom
+from minisom import MiniSom  # https://github.com/JustGlowing/minisom
 from matplotlib.pylab import bone, pcolor, colorbar, plot, show, legend, text
 from variables import labels, data, names
 import random
 import copy
 import numpy as np
 import pandas as pd
+import math
+
 
 def som(data, learning_rate=.1):
     """
@@ -25,6 +27,7 @@ def som(data, learning_rate=.1):
     som.pca_weights_init(data)
     som.train_random(data, 500, verbose=True)
     return som
+
 
 def somWithClassInfo(data):
     """
@@ -47,7 +50,8 @@ def somWithClassInfo(data):
     plotSom(model, df.to_numpy(), labels)
     return model
 
-def plotSom(som, data, labels, featureNames = None):
+
+def plotSom(som, data, labels, featureNames=None, LR=0):
     """
     This function is used to plot som. Colors, sizes and data can be set here.
 
@@ -59,23 +63,70 @@ def plotSom(som, data, labels, featureNames = None):
     pcolor(som.distance_map().T)
     colorbar()
     colors = ['r', 'g']
+
+    dataPositions = []
+
     for i, x in enumerate(data):
         ox = random.random()
         oy = random.random()
         w = som.winner(x)
-        plot(w[0] + ox,
-            w[1] + oy,
-            'o',
-            markeredgecolor=colors[labels[i]],
-            markerfacecolor = colors[labels[i]],
-            markersize=6,
-            markeredgewidth=2)
+
+        xpos = w[0] + ox
+        ypos = w[1] + oy
+        dataPositions.append([xpos, ypos, labels[i]])
+        plot(xpos,
+             ypos,
+             'o',
+             markeredgecolor=colors[labels[i]],
+             markerfacecolor=colors[labels[i]],
+             markersize=6,
+             markeredgewidth=2)
         if featureNames is not None:
-            text(w[0]+ox, w[1]+oy, featureNames[i], c=colors[labels[i]])
+            text(w[0] + ox, w[1] + oy, featureNames[i], c=colors[labels[i]])
+
+    result = calculateDistBetweenNeurons(dataPositions)
+
     show()
+
+    result.insert(0, LR)
+    return result
+
+
+def calcDistOfLabel(pos, currNeur, labelType):
+    distancesWithAllOthers = 0
+    for randNeur in pos:
+        if randNeur[2] == labelType:
+            Xdiff = abs(randNeur[0] - currNeur[0])
+            Ydiff = abs(randNeur[1] - currNeur[1])
+            distancesWithAllOthers += math.sqrt(pow(Xdiff, 2) + pow(Ydiff, 2))
+    return distancesWithAllOthers
+
+
+def calculateDistBetweenNeurons(positionData):
+    sumFor = 0
+    nFor = 0
+    sumAgainst = 0
+    nAgainst = 0
+    for currNeur in positionData:
+        nodeLabel = currNeur[2]
+        if nodeLabel == 0:
+            sumFor += calcDistOfLabel(positionData, currNeur, 0)
+            nFor += 1
+        elif nodeLabel == 1:
+            sumAgainst += calcDistOfLabel(positionData, currNeur, 1)
+            nAgainst += 1
+
+    sumFor = round(sumFor, 2)
+    avgFor = round(sumFor / nFor, 2)
+    sumAgainst = round(sumAgainst, 2)
+    avgAgainst = round(sumAgainst / nAgainst, 2)
+
+    result = [sumFor, avgFor, sumAgainst, avgAgainst]
+
+    return result
+
 
 if __name__ == "__main__":
     # from svm import getImportantData
     # data = getImportantData()
     somModel = somWithClassInfo(data)
-
