@@ -6,3 +6,6 @@ __pycache__/
 logs/
 
 SavedVisualisation/SOM_Dist/
+
+*.xlsx
+SOMNeuronDistances_final.pdf
