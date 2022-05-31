@@ -42,7 +42,7 @@ def saveDistanceInfoToExcelFile(distances):
     for data in distances[:-1]:  # last row is filled with zeros
         worksheet.write(row, 0, dataTypes[typeIter % len(dataTypes)])
         for i in range(1,cols):
-            worksheet.write(row, i, data[i])
+            worksheet.write(row, i, data[i-1])
         row += 1
         typeIter += 1
 
