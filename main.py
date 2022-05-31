@@ -53,28 +53,28 @@ if __name__ == "__main__":
     distances = []
 
     sommodel = som(data, .15)
-    distances.append(plotSom(sommodel, data, labels, names, 0.15))
+    distances.append(plotSom(sommodel, data, labels, names, 0.15, "before"))
     sommodel.train_random(data2, 50)
-    distances.append(plotSom(sommodel, data3, labels, names, 0.15))
+    distances.append(plotSom(sommodel, data3, labels, names, 0.15, "after"))
 
     sommodel = som(data, .1)
-    distances.append(plotSom(sommodel, data, labels, names, 0.1))
+    distances.append(plotSom(sommodel, data, labels, names, 0.1, "before"))
     sommodel.train_random(data2, 50)
-    distances.append(plotSom(sommodel, data3, labels, names, 0.1))
+    distances.append(plotSom(sommodel, data3, labels, names, 0.1, "after"))
 
     sommodel = som(data, .01)
-    distances.append(plotSom(sommodel, data, labels, names, 0.01))
+    distances.append(plotSom(sommodel, data, labels, names, 0.01, "before"))
     sommodel.train_random(data2, 50)
-    distances.append(plotSom(sommodel, data3, labels, names, 0.01))
+    distances.append(plotSom(sommodel, data3, labels, names, 0.01, "after"))
 
     sommodel = som(data, .001)
-    distances.append(plotSom(sommodel, data, labels, names, 0.001))
+    distances.append(plotSom(sommodel, data, labels, names, 0.001, "before"))
     sommodel.train_random(data2, 50)
-    distances.append(plotSom(sommodel, data3, labels, names, 0.001))
+    distances.append(plotSom(sommodel, data3, labels, names, 0.001, "after"))
 
     sommodel = som(data, .0001)
-    distances.append(plotSom(sommodel, data, labels, names, 0.0001))
+    distances.append(plotSom(sommodel, data, labels, names, 0.0001, "before"))
     sommodel.train_random(data2, 50)
-    distances.append(plotSom(sommodel, data3, labels, names, 0.0001))
+    distances.append(plotSom(sommodel, data3, labels, names, 0.0001, "after"))
 
     saveDistanceInfoToExcelFile(distances)

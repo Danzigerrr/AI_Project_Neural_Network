@@ -1,3 +1,4 @@
+from matplotlib import pyplot as plt
 from minisom import MiniSom  # https://github.com/JustGlowing/minisom
 from matplotlib.pylab import bone, pcolor, colorbar, plot, show, legend, text
 from variables import labels, data, names
@@ -51,7 +52,7 @@ def somWithClassInfo(data):
     return model
 
 
-def plotSom(som, data, labels, featureNames=None, LR=0):
+def plotSom(som, data, labels, featureNames=None, LR=0, BeforeOrAfter = ""):
     """
     This function is used to plot som. Colors, sizes and data can be set here.
 
@@ -59,6 +60,8 @@ def plotSom(som, data, labels, featureNames=None, LR=0):
         :som: trained SOM model
         :data: words in an array
     """
+    plt.clf()
+    plt.figure(figsize=(13,7))
     bone()
     pcolor(som.distance_map().T)
     colorbar()
@@ -86,7 +89,9 @@ def plotSom(som, data, labels, featureNames=None, LR=0):
 
     result = calculateDistBetweenNeurons(dataPositions)
 
-    show()
+    # show()
+    plt.savefig("SavedVisualisation/SOM_Dist/" + str(LR) + "_"+ BeforeOrAfter + ".png")
+
 
     result.insert(0, LR)
     return result
