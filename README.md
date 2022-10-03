@@ -1,4 +1,4 @@
-# Neural Network modelling deep beliefs about vaccination
+# Neural Network modelling conceptual framework about vaccination
 
 Authors: Bogna Lew, Bartosz Strzelecki, Krzysztof Nazar
 
